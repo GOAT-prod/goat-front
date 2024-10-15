@@ -18,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(GeistSans.className, 'h-screen bg-background')}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <Provider>{children}</Provider>
-        </ThemeProvider>
+        {/* Из-за провайдера происходит ошибка Warning: Extra attributes from the server*/}
+        {/* <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange> */}
+        <Provider>{children}</Provider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   );

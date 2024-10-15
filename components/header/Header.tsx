@@ -6,6 +6,7 @@ import { SeachInput } from '../search-input/SeachInput';
 import { cn } from '@/lib/utils';
 import { Button } from '../ui/button';
 import { ModeToggle } from '../toggleTheme/ToggleTheme';
+import { SheetDemo } from '../add-product-sheet/AddProductSheet';
 
 interface HeaderProps {
   className?: string;
@@ -26,6 +27,7 @@ export const Header = ({ className }: HeaderProps) => {
         <div className="flex flex-1 items-center justify-between py-5 pl-6 pr-7">
           <SeachInput className="flex-1" />
           <div className="flex items-center gap-2">
+            <SheetDemo />
             <Button size={'small'} className="flex gap-[10px]">
               <p>Заказы</p>
             </Button>

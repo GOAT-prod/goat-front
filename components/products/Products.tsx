@@ -21,8 +21,8 @@ export const ProductsCatalog = () => {
 
   return (
     <div className="grid grid-cols-4 gap-[24px] p-[24px] pt-0">
-      {isLoading && Array(12).fill(0).map(() => {
-        return <SkeletonCard />
+      {isLoading && Array(12).fill(0).map((_, index) => {
+        return <SkeletonCard key={index} />
       })}
       {data && data?.map((product, index) => (
         <div key={index}>
