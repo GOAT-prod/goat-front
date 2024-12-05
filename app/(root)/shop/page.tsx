@@ -1,8 +1,12 @@
-import { CatalogSettings } from '@/components/catalog-settings/CatalogSettings';
-import { Filters } from '@/components/filters/Filters';
-import { ProductsCatalog } from '@/components/products/Products';
-import { ProductsContainer } from '@/components/shop-container/ShopContainer';
-import { Suspense, useMemo } from 'react';
+// import { CatalogSettings } from "@/src/components/catalog-settings/CatalogSettings";
+// import { Filters } from "@/src/components/filters/Filters";
+// import { ProductsCatalog } from "@/src/components/products/Products";
+// import { ProductsContainer } from "@/src/components/shop-container/ShopContainer";
+import { Suspense } from "react";
+import { Filters } from "../../../src/components/filters/Filters";
+import { ProductsContainer } from "../../../src/components/shop-container/ShopContainer";
+import { CatalogSettings } from "../../../src/components/catalog-settings/CatalogSettings";
+import { ProductsCatalog } from "../../../src/components/products/Products";
 
 export default async function Shop() {
   // 2.hydrate
@@ -30,7 +34,10 @@ export default async function Shop() {
           <Filters />
         </Suspense>
       </aside>
-      <ProductsContainer headerTitle={'Товары'} headerDetails={<CatalogSettings />}>
+      <ProductsContainer
+        headerTitle="Товары"
+        headerDetails={<CatalogSettings />}
+      >
         <ProductsCatalog />
       </ProductsContainer>
     </>

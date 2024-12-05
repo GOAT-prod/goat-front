@@ -1,20 +1,22 @@
 import type { Metadata } from 'next';
+
 import { GeistSans } from 'geist/font/sans';
+
+import { Provider } from '@/utils/providers/Providers';
+
+import { cn } from '@/utils/helpers/cn';
 import './globals.css';
-import { ThemeProvider } from '@/providers/ThemeProviders';
-import { cn } from '@/lib/utils';
-import Provider from '@/providers/Providers';
 
 export const metadata: Metadata = {
   title: 'goat logistic',
   description: 'idk, but it works',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+export const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
   return (
     <html lang="en">
       <body className={cn(GeistSans.className, 'h-screen bg-background')}>
@@ -25,4 +27,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};

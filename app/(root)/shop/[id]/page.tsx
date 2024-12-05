@@ -1,12 +1,12 @@
 'use client'
-import { BreadcrumbDemo } from "@/components/breadcrumb-demo/BreadcrumbDemo";
-import { useEffect, useMemo } from "react";
-import { ProductContainer } from "@/components/shop-container/ShopContainer";
-import { ProductVariants } from "./(components)/product-variants/ProductVariants";
-import { ProductItem } from "@/components/product-item/ProductItem";
-import { useQuery } from "@tanstack/react-query";
 import { getProduct } from "@/app/(services)/products";
-import { SkeletonCard } from "@/components/skeleton-card/SkeletonCard";
+import { BreadcrumbDemo } from "@/src/components/breadcrumb-demo/BreadcrumbDemo";
+import { ProductItem } from "@/src/components/product-item/ProductItem";
+import { ProductContainer } from "@/src/components/shop-container/ShopContainer";
+import { SkeletonCard } from "@/src/components/skeleton-card/SkeletonCard";
+import { useQuery } from "@tanstack/react-query";
+import { useEffect, useMemo } from "react";
+import { ProductVariants } from "./(components)/product-variants/ProductVariants";
 
 export default function ProductPage({ params }: { params: { id: string } }) {
 

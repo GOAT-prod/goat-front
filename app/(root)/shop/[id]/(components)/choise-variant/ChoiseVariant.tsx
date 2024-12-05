@@ -1,5 +1,5 @@
-import { Label } from '@/components/ui/label';
-import { RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/src/components/ui/label';
+import { RadioGroupItem } from '@/src/components/ui/radio-group';
 
 interface ProductVariantProps {
     id: string;

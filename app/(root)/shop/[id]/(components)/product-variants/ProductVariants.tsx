@@ -1,7 +1,7 @@
-import { ProductVariantsContainer, } from '../variant-accordion/VariantAccordion';
-import { Accordion } from '@/components/ui/accordion';
-import { Title } from '@/components/ui/title';
+import { Accordion } from '@/src/components/ui/accordion';
+import { Title } from '@/src/components/ui/title';
 import { useMemo } from 'react';
+import { ProductVariantsContainer, } from '../variant-accordion/VariantAccordion';
 
 export type ProductVarinats = {
     colors?: string[],

@@ -1,7 +1,7 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Авторизация',
+  title: "Авторизация",
 };
 
 export default function HomeLayout({
