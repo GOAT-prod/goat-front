@@ -1,16 +1,26 @@
-import { ModeToggle } from "@/components/ToggleTheme";
-import { AuthorizationForm } from "./(components)/AuthorizationForm/AuthorizationForm";
+"use client";
+
+import { GoatLogo } from "@/components/GoatLogo";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { Button } from "@/ui/button";
+import { useRouter } from "next/navigation";
 
 export default async function Home() {
+  const router = useRouter();
+
+  const onHandleNavigate = () => {
+    router.push("/auth");
+  };
+
   return (
     <div className="flex h-full flex-col items-center justify-center">
       <span className="absolute top-10 left-10 mb-6 text-2xl">
-        <strong>goat</strong> <span className="font-light">logistic</span>
+        <GoatLogo />
       </span>
       <div className="absolute top-10 right-10">
-        <ModeToggle />
+        <ThemeSwitcher />
       </div>
-      <AuthorizationForm />
+      <Button onClick={onHandleNavigate}>Авторизация</Button>
     </div>
   );
 }

@@ -1,6 +1,6 @@
+import { Container } from "@/components/Container";
+import { Header } from "@/components/Header";
 import type { Metadata } from "next";
-import { Container } from "../(components)/Container/Container";
-import { Header } from "../(components)/Header/Header";
 
 export const metadata: Metadata = {
   title: "Авторизация",

@@ -1,12 +1,8 @@
-// import { CatalogSettings } from "@/src/components/catalog-settings/CatalogSettings";
-// import { Filters } from "@/src/components/filters/Filters";
-// import { ProductsCatalog } from "@/src/components/products/Products";
-// import { ProductsContainer } from "@/src/components/shop-container/ShopContainer";
 import { Suspense } from "react";
-import { Filters } from "../../../src/components/filters/Filters";
-import { ProductsContainer } from "../../../src/components/shop-container/ShopContainer";
-import { CatalogSettings } from "../../../src/components/catalog-settings/CatalogSettings";
-import { ProductsCatalog } from "../../../src/components/products/Products";
+import { Filters } from "./(shop-components)/Filters";
+import { ProductsContainer } from "./(shop-components)/ShopContainer";
+import { ProductsCatalog } from "./(shop-components)/ProductsCatalog";
+import { CatalogSettings } from "./(shop-components)/CatalogSettings";
 
 export default async function Shop() {
   // 2.hydrate
@@ -28,11 +24,8 @@ export default async function Shop() {
 
   return (
     <>
-      {/* TODO* aside в sidebar */}
       <aside className="w-[var(--filters-width)] py-4 px-6 border-r h-full border-border ">
-        <Suspense>
-          <Filters />
-        </Suspense>
+        <Filters />
       </aside>
       <ProductsContainer
         headerTitle="Товары"
