@@ -1,9 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
-import { getProducts } from "../../../(services)/products";
 import { SkeletonCard } from "@/components/SkeletonCard";
 import { ProductCard } from "./ProductCard";
+import { getProducts } from "../../../(services)/products";
+import { Product } from "../../../../@types";
 
 export const ProductsCatalog = () => {
   const router = useRouter();

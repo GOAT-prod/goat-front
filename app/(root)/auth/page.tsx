@@ -1,17 +1,12 @@
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import { GoatLogo } from "../../../src/components/common/GoatLogo";
-import { AuthPanel } from "./(auth-components)/AuthPanel";
+import { LoginForm } from "./(auth-components)/LoginForm";
 
 export default async function Auth() {
   return (
-    <div className="flex h-full flex-col items-center justify-center">
-      <span className="absolute top-10 left-10 mb-6 text-2xl">
-        <GoatLogo />
-      </span>
-      <div className="absolute top-10 right-10">
-        <ThemeSwitcher />
+    <>
+      <div className="flex flex-col items-center gap-3">
+        <h2 className="font-semibold text-xl">Вход</h2>
       </div>
-      <AuthPanel />
-    </div>
+      <LoginForm />
+    </>
   );
 }

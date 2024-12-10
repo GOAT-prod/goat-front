@@ -1,3 +1,4 @@
+import { Product } from "../../@types";
 import { Button } from "../../src/components/ui/button";
 import { Title } from "../../src/components/ui/title";
 

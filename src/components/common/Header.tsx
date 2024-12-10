@@ -6,7 +6,7 @@ import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Button } from "@/ui/button";
 import { SheetDemo } from "./AddProductSheet";
 import { GoatLogo } from "./GoatLogo";
-import { SeachInput } from "../../../app/(root)/shop/(shop-components)/SeachInput";
+import { SeachInput } from "../../../app/(apps)/shop/(shop-components)/SeachInput";
 
 interface HeaderProps {
   className?: string;
