@@ -9,6 +9,13 @@ import {
   FormMessage,
 } from "@/ui/form";
 import { Input } from "@/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/ui/select";
 import { Title } from "@/ui/title";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft } from "lucide-react";
@@ -19,11 +26,11 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 export const loginSchema = z.object({
-  name: z.enum(["shop", "admin", "factory", "other"]),
-  // email: z.string().email({ message: "Некорректный email" }),
-  // password: z
-  //   .string()
-  //   .min(6, { message: "Пароль должен быть не менее 8 символов" }),
+  email: z.string().email({ message: "Некорректный email" }),
+  password: z
+    .string()
+    .min(6, { message: "Пароль должен быть не менее 8 символов" }),
+  role: z.string({ required_error: "Выберите роль для регистрации" }),
 });
 
 export const RegisterForm = () => {
@@ -35,8 +42,9 @@ export const RegisterForm = () => {
   const loginForm = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      name: "other",
-      // password: "",
+      email: "",
+      password: "",
+      role: "",
     },
   });
 
@@ -75,26 +83,47 @@ export const RegisterForm = () => {
               </FormItem>
             )}
             control={loginForm.control}
-            name="name"
+            name="email"
           />
-          {/* 
-              <FormField
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Пароль</FormLabel>
+          <FormField
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Пароль</FormLabel>
+                <FormControl>
+                  <Input placeholder="Введите пароль" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+            control={loginForm.control}
+            name="password"
+          />
+          <FormField
+            render={({ field }) => {
+              return (
+                <FormItem>
+                  <FormLabel>Ваша роль</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
                     <FormControl>
-                      <Input
-                        placeholder="Введите пароль"
-                        type="password"
-                        {...field}
-                      />
+                      <SelectTrigger>
+                        <SelectValue placeholder="Выберите роль вашего сервиса" />
+                      </SelectTrigger>
                     </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-                control={loginForm.control}
-                name="password"
-              /> */}
+                    <SelectContent>
+                      <SelectItem value="shop">Магазин</SelectItem>
+                      <SelectItem value="factory">Завод</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              );
+            }}
+            control={loginForm.control}
+            name="role"
+          />
           {error && <Title className="text-red-500" text={error || ""} />}
           <div className="flex flex-col gap-5 items-center">
             <Button
