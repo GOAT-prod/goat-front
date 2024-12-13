@@ -6,14 +6,14 @@ interface ShopContainerProps {
   headerTitle: string;
 }
 
-export const ProductsContainer = ({
+export const CatalogContainer = ({
   children,
   headerDetails,
   headerTitle,
 }: ShopContainerProps) => {
   return (
-    <section className="flex-1 h-full pb-[16px] overflow-y-auto scrollbar">
-      <div className="flex w-full sticky top-0  bg-background py-[16px]  shadow-black/5 px-[24px]">
+    <section className="flex-1 pb-4">
+      <div className="flex w-full sticky top-0  bg-background py-4  shadow-black/5 px-6">
         <Title
           text={headerTitle}
           size="lg"
@@ -22,9 +22,9 @@ export const ProductsContainer = ({
         />
         <div className="flex items-center ml-auto gap-2">{headerDetails}</div>
       </div>
-      {children}
+      <div className="">{children}</div>
     </section>
   );
 };
 
-export const ProductContainer = ProductsContainer;
+export const ProductContainer = CatalogContainer;

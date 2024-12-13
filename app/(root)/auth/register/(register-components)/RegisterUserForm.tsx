@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/ui/button";
 import {
   Form,
@@ -16,12 +15,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/ui/select";
-import { Title } from "@/ui/title";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -30,39 +25,26 @@ export const loginSchema = z.object({
   password: z
     .string()
     .min(6, { message: "Пароль должен быть не менее 8 символов" }),
-  role: z.string({ required_error: "Выберите роль для регистрации" }),
+  role: z.string(),
 });
 
-export const RegisterForm = () => {
-  //   const { mutate: login, isPending } = useLogin();
-  const router = useRouter();
+interface RegisterUserFormProps {
+  setActiveForm: (value: "user" | "client") => void;
+}
 
-  const [error, setError] = useState<string | null>(null);
-
+export const RegisterUserForm = ({ setActiveForm }: RegisterUserFormProps) => {
   const loginForm = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
       password: "",
-      role: "",
+      role: "shop",
     },
   });
 
   const onRegisterSubmit = (values: z.infer<typeof loginSchema>) => {
     console.log(values);
-
-    // login(
-    //   { email: values.email, password: values.password },
-    //   {
-    //     onSuccess: (data) => {
-    //       localStorage.setItem("token", data.access);
-    //       setError("");
-    //     },
-    //     onError: () => {
-    //       setError("Вы ввели неверные данные");
-    //     },
-    //   }
-    // );
+    setActiveForm("client");
   };
 
   return (
@@ -72,12 +54,13 @@ export const RegisterForm = () => {
           className="space-y-4 w-full"
           onSubmit={loginForm.handleSubmit(onRegisterSubmit)}
         >
+          <FormLabel>Регистрация пользователя</FormLabel>
           <FormField
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Введите email" {...field} />
+                  <Input type="email" placeholder="Введите email" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -90,7 +73,11 @@ export const RegisterForm = () => {
               <FormItem>
                 <FormLabel>Пароль</FormLabel>
                 <FormControl>
-                  <Input placeholder="Введите пароль" {...field} />
+                  <Input
+                    type="password"
+                    placeholder="Введите пароль"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -108,7 +95,7 @@ export const RegisterForm = () => {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="h-9">
                         <SelectValue placeholder="Выберите роль вашего сервиса" />
                       </SelectTrigger>
                     </FormControl>
@@ -124,24 +111,14 @@ export const RegisterForm = () => {
             control={loginForm.control}
             name="role"
           />
-          {error && <Title className="text-red-500" text={error || ""} />}
           <div className="flex flex-col gap-5 items-center">
             <Button
               type="submit"
               className="w-full"
               // onClick={onAuth}
             >
-              Зарегистрироваться
-            </Button>
-            <Button className="w-full" variant={"secondary"}>
-              <Link
-                href="/auth"
-                className="text-sm flex items-center justify-between w-full"
-              >
-                <ArrowLeft size={18} />
-                Войти
-                <ArrowLeft size={18} className="invisible" />
-              </Link>
+              Регистрация организации
+              <ArrowRight size={18} className="ml-auto" />
             </Button>
           </div>
         </form>

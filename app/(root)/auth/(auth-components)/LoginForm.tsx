@@ -70,6 +70,11 @@ export const LoginForm = () => {
     // );
   };
 
+  const redirectToRegister = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    router.push("/auth/register");
+  };
+
   return (
     <>
       {isPending ? (
@@ -95,24 +100,6 @@ export const LoginForm = () => {
               control={loginForm.control}
               name="name"
             />
-            {/* 
-            <FormField
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Пароль</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Введите пароль"
-                      type="password"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-              control={loginForm.control}
-              name="password"
-            /> */}
             {error && <Title className="text-red-500" text={error || ""} />}
             <div className="flex flex-col gap-5 items-center">
               <Button
@@ -124,17 +111,12 @@ export const LoginForm = () => {
               </Button>
               <Button
                 variant={"secondary"}
-                className="w-full"
-                // onClick={onAuth}
+                className="w-full flex items-center justify-between"
+                onClick={(event) => redirectToRegister(event)}
               >
-                <Link
-                  href="/auth/register"
-                  className="text-sm flex items-center justify-between w-full"
-                >
-                  <ArrowRight size={18} className="invisible" />
-                  Регистрация
-                  <ArrowRight size={18} />
-                </Link>
+                <ArrowRight size={18} className="invisible" />
+                Регистрация
+                <ArrowRight size={18} />
               </Button>
             </div>
           </form>

@@ -1,11 +1,11 @@
 interface GoatLogoProps {
-  className?: string;
+  title: string;
 }
 
-export const GoatLogo = ({ className }: GoatLogoProps) => {
+export const GoatLogo = ({ title }: GoatLogoProps) => {
   return (
     <>
-      <strong>goat</strong> <span className="font-light">logistic</span>
+      <strong>goat</strong> <span className="font-light">{title}</span>
     </>
   );
 };

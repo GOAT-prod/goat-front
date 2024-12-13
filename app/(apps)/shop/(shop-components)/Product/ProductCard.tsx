@@ -20,13 +20,17 @@ export const ProductCard = ({ product, onClick }: ProductCardProps) => {
   return (
     <ProductCardLayout className="cursor-pointer" onClick={onClick}>
       <ProductCardHeader className="h-full w-full">
-        <img alt="Карточка товара" src={product.images[0].imageUrl} />
+        <img
+          alt="Карточка товара"
+          src={product.Images[0]}
+          className="w-full min-h-full"
+        />
       </ProductCardHeader>
       <ProductCardContent>
-        <ProductCardTitle>{product.name}</ProductCardTitle>
+        <ProductCardTitle>{product.Name}</ProductCardTitle>
       </ProductCardContent>
       <ProductCardFooter className="flex items-center justify-between">
-        <Title size="md" text={`${product.price} $`} />
+        <Title size="md" text={`${product.Price} $`} />
         <Button size="small">Заказать</Button>
       </ProductCardFooter>
     </ProductCardLayout>

@@ -1,29 +1,30 @@
 {
-   "compilerOptions": {
-      "incremental": true,
-      "target": "ESNext",
-      "jsx": "preserve",
-      "lib": ["dom", "dom.iterable", "esnext"],
-      "module": "esnext",
-      "moduleResolution": "bundler",
-      "paths": {
-         "@/components/*": ["./src/components/common/*"],
-         "@/ui/*": ["./src/components/ui/*"],
-         "@/utils/*": ["./src/utils/*"]
-      },
-      "resolveJsonModule": true,
-      "allowJs": true,
-      "strict": true,
-      "noEmit": true,
-      "esModuleInterop": true,
-      "isolatedModules": true,
-      "skipLibCheck": true,
-      "plugins": [
-         {
-            "name": "next"
-         }
-      ]
-   },
-   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-   "exclude": ["node_modules"]
+  "compilerOptions": {
+    "incremental": true,
+    "target": "ESNext",
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@/components/*": ["./src/components/common/*"],
+      "@/ui/*": ["./src/components/ui/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/hooks/*": ["./src/hooks/*"]
+    },
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

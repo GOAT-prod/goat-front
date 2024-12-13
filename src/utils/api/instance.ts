@@ -1,10 +1,9 @@
-import type { AxiosInstance } from "axios";
-import axios from "axios";
+import { Fetches } from "@siberiacancode/fetches";
 
-export const api: AxiosInstance = axios.create({
-  baseURL: "https://cybergarden.leganyst.ru",
-  withCredentials: true,
-  headers: {
-    Accept: "application/json",
-  },
+export const headers: Record<string, string> = {
+  Authorization: process.env.NEXT_PUBLIC_AUTH_KEY || "",
+};
+
+export const api = new Fetches({
+  baseURL: "http://localhost:8080",
 });

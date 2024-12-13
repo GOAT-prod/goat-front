@@ -1,19 +1,25 @@
-import { Product } from "../../@types";
-import { Button } from "../../src/components/ui/button";
-import { Title } from "../../src/components/ui/title";
+"use client";
+import { useGetProductQuery } from "@/hooks/useGetProductQuery";
+import { Button } from "@/ui/button";
+import { Title } from "@/ui/title";
 
 interface CatalogItemProps {
-  product: Product;
+  productId: string;
 }
 
-export const ProductItem = ({ product }: CatalogItemProps) => {
+export const ProductItem = ({ productId }: CatalogItemProps) => {
+  const { data: product, isLoading } = useGetProductQuery(+productId);
+  if (isLoading) {
+    return <div>Loading</div>;
+  }
+
   return (
     <div className="px-6 pb-6 flex gap-6">
       <div className="w-[55.2%]">
         {/* Картинка */}
         <div className="bg-background-secondary p-6 rounded-lg border-[1.5px] border-border">
           <img
-            src={product.images[0].imageUrl}
+            src={product?.data.Images[0]}
             alt="Карточка товара"
             className="rounded-md"
           />
@@ -26,15 +32,19 @@ export const ProductItem = ({ product }: CatalogItemProps) => {
           <Title
             tag="h1"
             size="2xl"
-            text={product.brand.name}
+            text={product?.data.BrandName || ""}
             className="mb-4 font-semibold leading-7"
           />
-          <Title size="lg" text={product.name} className="font-medium" />
+          <Title
+            size="lg"
+            text={product?.data.Name || ""}
+            className="font-medium"
+          />
         </div>
         <div className="p-6 flex flex-col gap-4 bg-background-secondary rounded-lg border-[1.5px] border-border">
           <Title
             size="2xl"
-            text={`${product.price} $`}
+            text={`${product?.data.Price || 0} $`}
             className="font-semibold"
           />
           <Button size={"large"} className="w-[160px]">

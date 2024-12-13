@@ -1,4 +1,5 @@
-import { RegisterForm } from "./(register-components)/RegistrationForm";
+import { BackToLoginButton } from "./(register-components)/BackToLoginButton";
+import { RegisterPanel } from "./(register-components)/RegisterPanel";
 
 export default async function Register() {
   return (
@@ -6,7 +7,8 @@ export default async function Register() {
       <div className="flex flex-col items-center gap-3">
         <h2 className="font-semibold text-xl">Регистрация</h2>
       </div>
-      <RegisterForm />
+      <RegisterPanel />
+      <BackToLoginButton />
     </>
   );
 }

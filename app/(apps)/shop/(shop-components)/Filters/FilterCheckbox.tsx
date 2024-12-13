@@ -6,7 +6,6 @@ import React from "react";
 export interface FilterChecboxProps {
   text: string;
   value: string;
-  endAdornment?: React.ReactNode;
   onCheckedChange?: (checked: boolean) => void;
   checked?: boolean;
   name?: string;
@@ -15,7 +14,6 @@ export interface FilterChecboxProps {
 export const FilterCheckbox = ({
   text,
   value,
-  endAdornment,
   onCheckedChange,
   checked,
   name,
@@ -35,7 +33,6 @@ export const FilterCheckbox = ({
       >
         {text}
       </label>
-      {endAdornment}
     </div>
   );
 };
