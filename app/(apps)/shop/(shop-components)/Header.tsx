@@ -4,9 +4,9 @@ import { cn } from "@/utils/helpers/cn";
 import { Container } from "../../../../src/components/common/Container";
 import { ThemeSwitcher } from "../../../../src/components/common/ThemeSwitcher";
 import { Button } from "@/ui/button";
-import { SheetDemo } from "../../../../src/components/common/AddProductSheet";
 import { GoatLogo } from "../../../../src/components/common/GoatLogo";
 import { SeachInput } from "./SeachInput";
+import { CartDrawer } from "./Cart/CartDrawer";
 
 interface HeaderProps {
   className?: string;
@@ -27,10 +27,7 @@ export const Header = ({ className }: HeaderProps) => {
         <div className="flex flex-1 items-center justify-between py-5 pr-7 pl-6">
           <SeachInput className="flex-1" />
           <div className="flex items-center gap-2">
-            <SheetDemo />
-            <Button size="small" className="flex gap-[10px]">
-              Заказы
-            </Button>
+            <CartDrawer />
             <Button
               size="small"
               variant="secondary"

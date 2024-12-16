@@ -21,7 +21,7 @@ enum ProductStatus {
 }
 
 interface ProductItem {
-  Id: number;
+  id: number;
   StockCount: number;
   Size: number;
   Weight: number;

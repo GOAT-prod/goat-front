@@ -9,20 +9,90 @@
             "Price": 120.99,
             "Items": [
                 {
-                    "Id": 124,
+                    "id": 124,
                     "StockCount": 50,
                     "Size": 42,
                     "Weight": 0.9,
                     "Color": "Black"
+                },
+                {
+                    "id": 125,
+                    "StockCount": 40,
+                    "Size": 43,
+                    "Weight": 0.92,
+                    "Color": "White"
+                },
+                {
+                    "id": 126,
+                    "StockCount": 30,
+                    "Size": 41,
+                    "Weight": 0.88,
+                    "Color": "Red"
+                },
+                {
+                    "id": 127,
+                    "StockCount": 20,
+                    "Size": 40,
+                    "Weight": 0.87,
+                    "Color": "Blue"
+                },
+                {
+                    "id": 128,
+                    "StockCount": 60,
+                    "Size": 44,
+                    "Weight": 0.94,
+                    "Color": "Green"
+                },
+                {
+                    "id": 129,
+                    "StockCount": 35,
+                    "Size": 42,
+                    "Weight": 0.9,
+                    "Color": "Yellow"
+                },
+                {
+                    "id": 130,
+                    "StockCount": 25,
+                    "Size": 43,
+                    "Weight": 0.92,
+                    "Color": "Black"
+                },
+                {
+                    "id": 131,
+                    "StockCount": 45,
+                    "Size": 41,
+                    "Weight": 0.88,
+                    "Color": "White"
+                },
+                {
+                    "id": 132,
+                    "StockCount": 50,
+                    "Size": 40,
+                    "Weight": 0.87,
+                    "Color": "Red"
+                },
+                {
+                    "id": 133,
+                    "StockCount": 55,
+                    "Size": 44,
+                    "Weight": 0.94,
+                    "Color": "Blue"
+                },
+                {
+                    "id": 134,
+                    "StockCount": 56,
+                    "Size": 45,
+                    "Weight": 0.94,
+                    "Color": "Blue"
                 }
             ],
             "Materials": [
                 {
-                    "Id": 124,
+                    "id": 124,
                     "Material": "Leather"
                 },
                 {
-                    "Id": 2,
+                    "id": 2,
                     "Material": "Rubber"
                 }
             ],
@@ -41,7 +111,7 @@
             "Price": 150.5,
             "Items": [
                 {
-                    "Id": 125,
+                    "id": 125,
                     "StockCount": 40,
                     "Size": 44,
                     "Weight": 0.85,
@@ -50,11 +120,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 125,
+                    "id": 125,
                     "Material": "Synthetic"
                 },
                 {
-                    "Id": 3,
+                    "id": 3,
                     "Material": "Rubber"
                 }
             ],
@@ -73,7 +143,7 @@
             "Price": 99.99,
             "Items": [
                 {
-                    "Id": 126,
+                    "id": 126,
                     "StockCount": 60,
                     "Size": 43,
                     "Weight": 0.95,
@@ -82,11 +152,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 126,
+                    "id": 126,
                     "Material": "Mesh"
                 },
                 {
-                    "Id": 4,
+                    "id": 4,
                     "Material": "Rubber"
                 }
             ],
@@ -105,7 +175,7 @@
             "Price": 110.0,
             "Items": [
                 {
-                    "Id": 127,
+                    "id": 127,
                     "StockCount": 45,
                     "Size": 40,
                     "Weight": 0.8,
@@ -114,11 +184,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 127,
+                    "id": 127,
                     "Material": "Textile"
                 },
                 {
-                    "Id": 5,
+                    "id": 5,
                     "Material": "Rubber"
                 }
             ],
@@ -137,7 +207,7 @@
             "Price": 135.75,
             "Items": [
                 {
-                    "Id": 128,
+                    "id": 128,
                     "StockCount": 55,
                     "Size": 41,
                     "Weight": 0.88,
@@ -146,11 +216,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 128,
+                    "id": 128,
                     "Material": "Foam"
                 },
                 {
-                    "Id": 6,
+                    "id": 6,
                     "Material": "Rubber"
                 }
             ],
@@ -169,7 +239,7 @@
             "Price": 180.0,
             "Items": [
                 {
-                    "Id": 129,
+                    "id": 129,
                     "StockCount": 30,
                     "Size": 45,
                     "Weight": 1.0,
@@ -178,11 +248,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 129,
+                    "id": 129,
                     "Material": "Suede"
                 },
                 {
-                    "Id": 7,
+                    "id": 7,
                     "Material": "Rubber"
                 }
             ],
@@ -201,7 +271,7 @@
             "Price": 150.99,
             "Items": [
                 {
-                    "Id": 201,
+                    "id": 201,
                     "StockCount": 40,
                     "Size": 43,
                     "Weight": 0.8,
@@ -210,11 +280,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 201,
+                    "id": 201,
                     "Material": "Primeknit"
                 },
                 {
-                    "Id": 202,
+                    "id": 202,
                     "Material": "Rubber"
                 }
             ],
@@ -233,7 +303,7 @@
             "Price": 120.49,
             "Items": [
                 {
-                    "Id": 302,
+                    "id": 302,
                     "StockCount": 60,
                     "Size": 42,
                     "Weight": 0.85,
@@ -242,11 +312,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 301,
+                    "id": 301,
                     "Material": "Textile"
                 },
                 {
-                    "Id": 302,
+                    "id": 302,
                     "Material": "Synthetic"
                 }
             ],
@@ -265,7 +335,7 @@
             "Price": 140.75,
             "Items": [
                 {
-                    "Id": 403,
+                    "id": 403,
                     "StockCount": 55,
                     "Size": 44,
                     "Weight": 0.9,
@@ -274,11 +344,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 401,
+                    "id": 401,
                     "Material": "Mesh"
                 },
                 {
-                    "Id": 402,
+                    "id": 402,
                     "Material": "Rubber"
                 }
             ],
@@ -297,7 +367,7 @@
             "Price": 180.99,
             "Items": [
                 {
-                    "Id": 504,
+                    "id": 504,
                     "StockCount": 35,
                     "Size": 41,
                     "Weight": 1.0,
@@ -306,11 +376,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 501,
+                    "id": 501,
                     "Material": "Suede"
                 },
                 {
-                    "Id": 502,
+                    "id": 502,
                     "Material": "Rubber"
                 }
             ],
@@ -329,7 +399,7 @@
             "Price": 160.89,
             "Items": [
                 {
-                    "Id": 605,
+                    "id": 605,
                     "StockCount": 45,
                     "Size": 40,
                     "Weight": 0.95,
@@ -338,11 +408,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 601,
+                    "id": 601,
                     "Material": "Synthetic"
                 },
                 {
-                    "Id": 602,
+                    "id": 602,
                     "Material": "Rubber"
                 }
             ],
@@ -361,7 +431,7 @@
             "Price": 135.99,
             "Items": [
                 {
-                    "Id": 706,
+                    "id": 706,
                     "StockCount": 50,
                     "Size": 42,
                     "Weight": 0.88,
@@ -370,11 +440,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 701,
+                    "id": 701,
                     "Material": "Mesh"
                 },
                 {
-                    "Id": 702,
+                    "id": 702,
                     "Material": "Rubber"
                 }
             ],
@@ -393,7 +463,7 @@
             "Price": 170.99,
             "Items": [
                 {
-                    "Id": 807,
+                    "id": 807,
                     "StockCount": 30,
                     "Size": 43,
                     "Weight": 1.1,
@@ -402,11 +472,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 801,
+                    "id": 801,
                     "Material": "Synthetic"
                 },
                 {
-                    "Id": 802,
+                    "id": 802,
                     "Material": "Rubber"
                 }
             ],
@@ -425,7 +495,7 @@
             "Price": 140.99,
             "Items": [
                 {
-                    "Id": 908,
+                    "id": 908,
                     "StockCount": 48,
                     "Size": 44,
                     "Weight": 0.87,
@@ -434,11 +504,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 901,
+                    "id": 901,
                     "Material": "Mesh"
                 },
                 {
-                    "Id": 902,
+                    "id": 902,
                     "Material": "Rubber"
                 }
             ],
@@ -457,7 +527,7 @@
             "Price": 130.99,
             "Items": [
                 {
-                    "Id": 1009,
+                    "id": 1009,
                     "StockCount": 60,
                     "Size": 41,
                     "Weight": 0.8,
@@ -466,11 +536,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1001,
+                    "id": 1001,
                     "Material": "Textile"
                 },
                 {
-                    "Id": 1002,
+                    "id": 1002,
                     "Material": "Rubber"
                 }
             ],
@@ -489,7 +559,7 @@
             "Price": 145.99,
             "Items": [
                 {
-                    "Id": 1110,
+                    "id": 1110,
                     "StockCount": 52,
                     "Size": 42,
                     "Weight": 0.92,
@@ -498,11 +568,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1101,
+                    "id": 1101,
                     "Material": "Synthetic"
                 },
                 {
-                    "Id": 1102,
+                    "id": 1102,
                     "Material": "Rubber"
                 }
             ],
@@ -521,7 +591,7 @@
             "Price": 140.99,
             "Items": [
                 {
-                    "Id": 1201,
+                    "id": 1201,
                     "StockCount": 45,
                     "Size": 41,
                     "Weight": 0.78,
@@ -530,11 +600,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1201,
+                    "id": 1201,
                     "Material": "Mesh"
                 },
                 {
-                    "Id": 1202,
+                    "id": 1202,
                     "Material": "Rubber"
                 }
             ],
@@ -553,7 +623,7 @@
             "Price": 180.49,
             "Items": [
                 {
-                    "Id": 1302,
+                    "id": 1302,
                     "StockCount": 38,
                     "Size": 43,
                     "Weight": 0.72,
@@ -562,11 +632,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1301,
+                    "id": 1301,
                     "Material": "Flyknit"
                 },
                 {
-                    "Id": 1302,
+                    "id": 1302,
                     "Material": "Rubber"
                 }
             ],
@@ -585,7 +655,7 @@
             "Price": 160.00,
             "Items": [
                 {
-                    "Id": 1403,
+                    "id": 1403,
                     "StockCount": 50,
                     "Size": 42,
                     "Weight": 0.95,
@@ -594,11 +664,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1401,
+                    "id": 1401,
                     "Material": "Textile"
                 },
                 {
-                    "Id": 1402,
+                    "id": 1402,
                     "Material": "Rubber"
                 }
             ],
@@ -617,7 +687,7 @@
             "Price": 200.99,
             "Items": [
                 {
-                    "Id": 1504,
+                    "id": 1504,
                     "StockCount": 30,
                     "Size": 44,
                     "Weight": 0.83,
@@ -626,11 +696,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1501,
+                    "id": 1501,
                     "Material": "Synthetic"
                 },
                 {
-                    "Id": 1502,
+                    "id": 1502,
                     "Material": "Rubber"
                 }
             ],
@@ -649,7 +719,7 @@
             "Price": 130.50,
             "Items": [
                 {
-                    "Id": 1605,
+                    "id": 1605,
                     "StockCount": 60,
                     "Size": 41,
                     "Weight": 0.85,
@@ -658,11 +728,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1601,
+                    "id": 1601,
                     "Material": "Suede"
                 },
                 {
-                    "Id": 1602,
+                    "id": 1602,
                     "Material": "Rubber"
                 }
             ],
@@ -681,7 +751,7 @@
             "Price": 150.75,
             "Items": [
                 {
-                    "Id": 1706,
+                    "id": 1706,
                     "StockCount": 42,
                     "Size": 40,
                     "Weight": 0.79,
@@ -690,11 +760,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1701,
+                    "id": 1701,
                     "Material": "Mesh"
                 },
                 {
-                    "Id": 1702,
+                    "id": 1702,
                     "Material": "Rubber"
                 }
             ],
@@ -713,7 +783,7 @@
             "Price": 170.00,
             "Items": [
                 {
-                    "Id": 1807,
+                    "id": 1807,
                     "StockCount": 35,
                     "Size": 44,
                     "Weight": 1.0,
@@ -722,11 +792,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1801,
+                    "id": 1801,
                     "Material": "Textile"
                 },
                 {
-                    "Id": 1802,
+                    "id": 1802,
                     "Material": "Rubber"
                 }
             ],
@@ -745,7 +815,7 @@
             "Price": 190.49,
             "Items": [
                 {
-                    "Id": 1908,
+                    "id": 1908,
                     "StockCount": 28,
                     "Size": 43,
                     "Weight": 0.65,
@@ -754,11 +824,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 1901,
+                    "id": 1901,
                     "Material": "Mesh"
                 },
                 {
-                    "Id": 1902,
+                    "id": 1902,
                     "Material": "Rubber"
                 }
             ],
@@ -777,7 +847,7 @@
             "Price": 140.99,
             "Items": [
                 {
-                    "Id": 2009,
+                    "id": 2009,
                     "StockCount": 47,
                     "Size": 42,
                     "Weight": 0.82,
@@ -786,11 +856,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 2001,
+                    "id": 2001,
                     "Material": "Synthetic"
                 },
                 {
-                    "Id": 2002,
+                    "id": 2002,
                     "Material": "Rubber"
                 }
             ],
@@ -809,7 +879,7 @@
             "Price": 165.49,
             "Items": [
                 {
-                    "Id": 2110,
+                    "id": 2110,
                     "StockCount": 40,
                     "Size": 41,
                     "Weight": 0.88,
@@ -818,11 +888,11 @@
             ],
             "Materials": [
                 {
-                    "Id": 2101,
+                    "id": 2101,
                     "Material": "Mesh"
                 },
                 {
-                    "Id": 2102,
+                    "id": 2102,
                     "Material": "Rubber"
                 }
             ],

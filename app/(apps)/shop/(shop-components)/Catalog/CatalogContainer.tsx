@@ -22,7 +22,7 @@ export const CatalogContainer = ({
         />
         <div className="flex items-center ml-auto gap-2">{headerDetails}</div>
       </div>
-      <div className="">{children}</div>
+      {children}
     </section>
   );
 };
