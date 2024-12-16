@@ -1,19 +1,19 @@
 import { Container } from "@/components/Container";
-import { ShopHeader } from "./(shop-components)/Header";
-import type { Metadata } from "next";
+import { Metadata } from "next";
+import { FactoryHeader } from "./(factory-components)/FactoryHeader";
 
 export const metadata: Metadata = {
-  title: "Goat Market",
+  title: "Goat Factory",
 };
 
-export default function ShopLayout({
+export default function FactoryLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <>
-      <ShopHeader />
+      <FactoryHeader />
       <Container>
         <main className="flex min-h-[calc(100vh-var(--header-height))] border border-border border-t-0">
           {children}

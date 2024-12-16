@@ -1,35 +1,29 @@
-import Link from "next/link";
-
-import { cn } from "@/utils/helpers/cn";
-import { Button } from "@/ui/button";
-import { SeachInput } from "./SeachInput";
-import { CartDrawer } from "./Cart/CartDrawer";
-import { Container } from "@/components/Container";
 import { GoatLogo } from "@/components/GoatLogo";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { Header } from "@/components/Header";
+import Link from "next/link";
+import { SeachInput } from "../../shop/(shop-components)/SeachInput";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { CreateProductDialog } from "./CreateProductDialog";
 
-interface HeaderProps {
+interface FactoryHeaderProps {
   className?: string;
 }
 
-export const ShopHeader = ({ className }: HeaderProps) => {
+export const FactoryHeader = ({ className }: FactoryHeaderProps) => {
   return (
     <Header className={className}>
       <Link
-        href="/shop"
+        href="/factory"
         className="flex w-[var(--filters-width)] items-center gap-[10px] border-border border-r px-6 py-5"
       >
         <span className="text-2xl">
-          <GoatLogo title="market" />
+          <GoatLogo title="factory" />
         </span>
       </Link>
       <div className="flex flex-1 items-center justify-between py-5 pr-7 pl-6">
-        <SeachInput className="flex-1" />
-        <div className="flex items-center gap-2">
-          <CartDrawer />
+        <div className="flex items-center justify-end gap-2 flex-1 ">
           <Link
-            href="/shop/profile"
+            href="/factory/profile"
             className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary-hover border border-border h-8 w-auto px-1.5 rounded-md"
           >
             Профиль

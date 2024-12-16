@@ -2,7 +2,7 @@
 import { Title } from "@/ui/title";
 import { Input } from "@/ui/input";
 import { CheckboxFiltersGroup } from "./CheckboxFiltersGroup";
-import { useGetFiltersQuery } from "@/hooks/useGetFiltersQuery";
+import { useGetFiltersQuery } from "@/hooks/query/useGetFiltersQuery";
 import { RangeSlider } from "@/ui/range-slider";
 import { Skeleton } from "@/ui/skeleton";
 

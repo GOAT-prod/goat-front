@@ -41,3 +41,27 @@ interface Filters {
   MinPrice: number;
   MaxPrice: number;
 }
+
+interface Cart {
+  items: CartItem[];
+  totalAmount: string;
+}
+
+interface CartItem {
+  id: number;
+  isSelected: boolean;
+  name: string;
+  price: string;
+  color: string;
+  size: string;
+  StockCount: number;
+}
+
+interface Order {
+  id: number;
+  status: string;
+  creationDate: string;
+  totalAmount: number;
+  totalWeight: number;
+  orderItems: CartItem[];
+}

@@ -1,5 +1,5 @@
 "use client";
-import { useGetProductQuery } from "@/hooks/useGetProductQuery";
+import { useGetProductQuery } from "@/hooks/query/useGetProductQuery";
 import { ProductLeftSide } from "./ProductLeftSide";
 import { ProductRightSide } from "./ProductRightSide";
 

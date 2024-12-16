@@ -954,5 +954,99 @@
         ],
         "MinPrice": 110.00,
         "MaxPrice": 200.99
+    },
+    "cart": {
+        "items": [
+            {
+                "id": 1,
+                "isSelected": true,
+                "name": "Nike Air Zoom Pegasus 37",
+                "price": "9 990 ₽",
+                "color": "Черный",
+                "size": "42",
+                "StockCount": 5
+            },
+            {
+                "id": 2,
+                "isSelected": false,
+                "name": "Adidas Ultraboost 22",
+                "price": "12 990 ₽",
+                "color": "Белый",
+                "size": "43",
+                "StockCount": 0
+            },
+            {
+                "id": 3,
+                "isSelected": true,
+                "name": "Puma RS-X Reinvent",
+                "price": "8 490 ₽",
+                "color": "Синий",
+                "size": "44",
+                "StockCount": 1
+            },
+            {
+                "id": 4,
+                "isSelected": false,
+                "name": "Reebok Nano X2",
+                "price": "10 490 ₽",
+                "color": "Красный",
+                "size": "41",
+                "StockCount": 3
+            },
+            {
+                "id": 5,
+                "isSelected": true,
+                "name": "Asics Gel-Kayano 28",
+                "price": "14 490 ₽",
+                "color": "Серый",
+                "size": "42",
+                "StockCount": 4
+            },
+            {
+                "id": 6,
+                "isSelected": false,
+                "name": "New Balance 990v5",
+                "price": "18 990 ₽",
+                "color": "Чёрный",
+                "size": "40",
+                "StockCount": 0
+            },
+            {
+                "id": 7,
+                "isSelected": true,
+                "name": "Saucony Endorphin Speed 3",
+                "price": "13 990 ₽",
+                "color": "Зеленый",
+                "size": "43"
+            },
+            {
+                "id": 8,
+                "isSelected": true,
+                "name": "Under Armour HOVR Sonic 5",
+                "price": "11 490 ₽",
+                "color": "Белый",
+                "size": "42",
+                "StockCount": 10
+            },
+            {
+                "id": 9,
+                "isSelected": true,
+                "name": "Mizuno Wave Rider 26",
+                "price": "12 490 ₽",
+                "color": "Фиолетовый",
+                "size": "44",
+                "StockCount": 7
+            },
+            {
+                "id": 10,
+                "isSelected": true,
+                "name": "Hoka One One Clifton 8",
+                "price": "15 990 ₽",
+                "color": "Жёлтый",
+                "size": "41",
+                "StockCount": 0
+            }
+        ],
+        "totalAmount": "1270"
     }
 }

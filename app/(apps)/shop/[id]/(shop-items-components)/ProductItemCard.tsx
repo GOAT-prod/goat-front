@@ -11,7 +11,7 @@ export const ProductItemCard = ({ productItem }: ProductItemCardProps) => {
   const [isAddet, setIsAddet] = useState(false);
 
   return (
-    <div className="flex gap-4 items-center justify-between bg-background border border-border rounded-lg p-6">
+    <div className="flex gap-4 items-center justify-between bg-background border border-border hover:border-border-hover shadow rounded-lg p-6">
       <div className="flex gap-2">
         <div className="font-medium">Цвет:</div>
         <div className="text-[#8F8F8F] w-[80px] truncate">

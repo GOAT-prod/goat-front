@@ -2,6 +2,7 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/utils/helpers/cn";
+import { Loader } from "./loader";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
@@ -41,6 +42,7 @@ export interface ButtonProps
   children?: React.ReactNode;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
+  isLoading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -53,6 +55,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size,
       prefix,
       suffix,
+      isLoading,
       asChild = false,
       ...props
     },
@@ -61,13 +64,24 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(
+          buttonVariants({ variant, size, className }),
+          isLoading && "opacity-70 pointer-events-none"
+        )}
         ref={ref}
         {...props}
       >
-        {prefix && <span className="mr-2">{prefix}</span>}
-        {children ? children : <span className="px-1.5">{text}</span>}
-        {suffix && <span className="ml-2">{suffix}</span>}
+        {isLoading ? (
+          <span className="flex items-center justify-center gap-2">
+            <Loader className="h-4 w-4 animate-spin" />
+          </span>
+        ) : (
+          <>
+            {prefix && <span className="mr-2">{prefix}</span>}
+            {children ? children : <span className="px-1.5">{text}</span>}
+            {suffix && <span className="ml-2">{suffix}</span>}
+          </>
+        )}
       </Comp>
     );
   }

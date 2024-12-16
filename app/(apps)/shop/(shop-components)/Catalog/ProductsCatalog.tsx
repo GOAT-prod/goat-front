@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { SkeletonCard } from "@/components/SkeletonCard";
 import { ProductCard } from "../Product/ProductCard";
-import { useGetProductsQuery } from "@/hooks/useGetProductsQuery";
+import { useGetProductsQuery } from "@/hooks/query/useGetProductsQuery";
 
 export const ProductsCatalog = () => {
   const router = useRouter();
