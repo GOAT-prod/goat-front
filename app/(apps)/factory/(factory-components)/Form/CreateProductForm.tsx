@@ -24,7 +24,8 @@ import {
 } from "@/ui/select";
 import { TextField } from "./TextField";
 import { AddImagesForm } from "./AddImagesForm";
-import { AddMatetialsForm } from "./AddMatetialsForm";
+import { AddProductItem } from "./AddProductItem";
+import { AddMaterialsForm } from "./AddMatetialsForm";
 
 export const CreateProductForm = () => {
   const createForm = useForm<z.infer<typeof productSchema>>({
@@ -37,15 +38,14 @@ export const CreateProductForm = () => {
       },
       id: 0,
       name: "",
-      price: 0,
       status: "created",
       materials: [],
       images: [],
+      items: [],
     },
   });
 
   const onSubmit = (values: z.infer<typeof productSchema>) => {
-    console.log("wawdaw");
     console.log(values);
   };
 
@@ -53,48 +53,52 @@ export const CreateProductForm = () => {
     <>
       <Form {...createForm}>
         <form
-          className="space-y-4 w-full p-6"
+          className="space-y-8 w-full p-6"
           onSubmit={createForm.handleSubmit(onSubmit)}
         >
-          <div className="flex gap-6">
-            {/* Бренд, название, цена */}
-            <div className="flex flex-col gap-4 w-1/3">
-              <TextField
-                title="Бренд кроссовок"
-                placeholder={"Введите бренд"}
-                name={"brandName"}
-                control={createForm.control}
-              />
-              <TextField
-                title="Название кроссовок"
-                placeholder={"Введите название"}
-                name={"name"}
-                control={createForm.control}
-              />
-              <FormField
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Цена</FormLabel>
-                    <FormControl>
-                      <Input
-                        type="text"
-                        placeholder="Введите цену"
-                        {...field}
-                        onChange={(e) =>
-                          field.onChange(Number(e.target.value) ?? undefined)
-                        }
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-                control={createForm.control}
-                name="price"
-              />
-            </div>
-            <AddImagesForm form={createForm} />
+          {/* Бренд, название, цена */}
+          <div className="flex gap-4">
+            <TextField
+              title="Бренд кроссовок"
+              placeholder={"Введите бренд"}
+              name={"brandName"}
+              control={createForm.control}
+            />
+            <TextField
+              title="Название кроссовок"
+              placeholder={"Введите название"}
+              name={"name"}
+              control={createForm.control}
+            />
+            <FormField
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Цена</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="number"
+                      placeholder="Введите цену"
+                      {...field}
+                      onChange={(e) =>
+                        field.onChange(Number(e.target.value) ?? undefined)
+                      }
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+              control={createForm.control}
+              name="price"
+            />
           </div>
-          <AddMatetialsForm form={createForm} />
+          <div className="flex gap-6">
+            <AddImagesForm form={createForm} />
+            <div className="min-h-full w-[1px] bg-[#cecece]" />
+            <AddMaterialsForm form={createForm} />
+            <div className="min-h-full w-[1px] bg-[#cecece]" />
+            <AddProductItem form={createForm} />
+          </div>
+
           <div className="flex gap-5 items-center">
             <Button type="submit" className="w-full">
               Создать товар

@@ -27,7 +27,7 @@ export const CreateProductDialog = ({
         <DialogTrigger className="text-sm rounded-md border border-border h-8 px-1.5 font-medium shadow-sm hover:bg-secondary-hover">
           Создать товар
         </DialogTrigger>
-        <DialogContent className="bg-white p-0 max-w-[800px]">
+        <DialogContent className="bg-white p-0 max-w-[1246px]">
           <DialogHeader className="px-6 pt-6 ">
             <DialogTitle>Создание товара</DialogTitle>
             <DialogDescription className="text-base">

@@ -18,25 +18,27 @@ export const AddImagesForm = ({ form }: AddImagesFormProps) => {
   });
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2  min-w-[265px] ">
       <Title
         className="text-sm font-medium"
         tag="h5"
         text="Изображения товара"
       />
 
-      <div className="flex gap-2 items-center">
+      <div className="flex flex-col gap-2  justify-start ">
         <Button
           type="button"
-          className="h-9 w-9"
-          size="icon"
+          size="small"
           onClick={() => append({ id: 0, imageUrl: "" })}
         >
-          <Plus />
+          Добавить изображение товара
         </Button>
+        <p className="text-red-500 text-[13px] font-medium">
+          {form.formState.errors.images?.message}
+        </p>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 h-[300px] overflow-auto pr-3 scrollbar">
         {fields.map((field, index) => (
           <FormField
             key={field.id}
@@ -56,7 +58,7 @@ export const AddImagesForm = ({ form }: AddImagesFormProps) => {
                 </FormItem>
                 <Button
                   type="button"
-                  className="h-9 w-9"
+                  className="h-6 w-6"
                   size="icon"
                   onClick={() => remove(index)}
                 >
@@ -66,7 +68,6 @@ export const AddImagesForm = ({ form }: AddImagesFormProps) => {
             )}
           />
         ))}
-        <p className="text-red-500">{form.formState.errors.images?.message}</p>
       </div>
     </div>
   );

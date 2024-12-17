@@ -24,7 +24,6 @@ export const TextField = ({
   name,
   placeholder,
   control,
-  onChange,
 }: TextFieldProps) => {
   return (
     <FormField
@@ -36,7 +35,6 @@ export const TextField = ({
               type="text"
               placeholder={placeholder}
               {...field}
-              onChange={onChange}
               value={
                 typeof field.value === "object"
                   ? JSON.stringify(field.value)
