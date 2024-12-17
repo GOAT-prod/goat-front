@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbo ",
     "dev:server": "json-server db.json --port 8080",
     "build": "next build",
     "start": "next start",
@@ -46,7 +46,8 @@
     "react-hook-form": "^7.53.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.1",

@@ -17,15 +17,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useLogin } from "@/utils/api/requests/auth/login";
 import { ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { Loader } from "@/ui/loader";
+import { useUserStore } from "@/store/userStore";
 
 export const loginSchema = z.object({
-  name: z.enum(["shop", "admin", "factory", "other"]),
-  // email: z.string().email({ message: "Некорректный email" }),
-  // password: z
-  //   .string()
-  //   .min(6, { message: "Пароль должен быть не менее 8 символов" }),
+  username: z.string().email({ message: "Некорректный email" }),
+  password: z
+    .string()
+    .min(6, { message: "Пароль должен быть не менее 8 символов" }),
 });
 
 export const LoginForm = () => {
@@ -37,37 +36,38 @@ export const LoginForm = () => {
   const loginForm = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      name: "other",
-      // password: "",
+      username: "",
+      password: "",
     },
   });
 
   const onLoginSubmit = (values: z.infer<typeof loginSchema>) => {
-    console.log(values);
-    switch (values.name) {
-      case "shop":
-        router.push("/shop");
-        break;
-      case "admin":
-        router.push("/admin");
-        break;
-      case "factory":
-        router.push("/factory");
-        break;
-      default:
-    }
-    // login(
-    //   { email: values.email, password: values.password },
-    //   {
-    //     onSuccess: (data) => {
-    //       localStorage.setItem("token", data.access);
-    //       setError("");
-    //     },
-    //     onError: () => {
-    //       setError("Вы ввели неверные данные");
-    //     },
-    //   }
-    // );
+    login(
+      { username: values.username, password: values.password },
+      {
+        onSuccess: (data) => {
+          setError("");
+          const { role } = useUserStore.getState().userInfo;
+
+          switch (role) {
+            case "shop":
+              router.push("/shop");
+              break;
+            case "admin":
+              router.push("/admin");
+              break;
+            case "factory":
+              router.push("/factory");
+              break;
+            default:
+              router.push("/");
+          }
+        },
+        onError: () => {
+          setError("Вы ввели неверные данные");
+        },
+      }
+    );
   };
 
   const redirectToRegister = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -92,21 +92,39 @@ export const LoginForm = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Введите email" {...field} />
+                    <Input
+                      type="email"
+                      placeholder="Введите email"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
               control={loginForm.control}
-              name="name"
+              name="username"
+            />
+            <FormField
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Пароль</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="Введите пароль"
+                      {...field}
+                      autoComplete="on"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+              control={loginForm.control}
+              name="password"
             />
             {error && <Title className="text-red-500" text={error || ""} />}
             <div className="flex flex-col gap-5 items-center">
-              <Button
-                type="submit"
-                className="w-full"
-                // onClick={onAuth}
-              >
+              <Button type="submit" className="w-full">
                 Войти
               </Button>
               <Button

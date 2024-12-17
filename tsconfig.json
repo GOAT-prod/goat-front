@@ -10,7 +10,8 @@
       "@/components/*": ["./src/components/common/*"],
       "@/ui/*": ["./src/components/ui/*"],
       "@/utils/*": ["./src/utils/*"],
-      "@/hooks/*": ["./src/hooks/*"]
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/store/*": ["./src/store/*"]
     },
     "resolveJsonModule": true,
     "allowJs": true,

@@ -1,15 +1,27 @@
+"use client";
 import { GoatLogo } from "@/components/GoatLogo";
 import { Header } from "@/components/Header";
 import Link from "next/link";
 import { SeachInput } from "../../shop/(shop-components)/SeachInput";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { CreateProductDialog } from "./CreateProductDialog";
+import { Button } from "@/ui/button";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 interface FactoryHeaderProps {
   className?: string;
 }
 
 export const FactoryHeader = ({ className }: FactoryHeaderProps) => {
+  const router = useRouter();
+
+  const logoutHendler = () => {
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("user");
+    router.push("/auth");
+  };
+
   return (
     <Header className={className}>
       <Link
@@ -29,6 +41,9 @@ export const FactoryHeader = ({ className }: FactoryHeaderProps) => {
             Профиль
           </Link>
           <ThemeSwitcher />
+          <Button size="small" onClick={logoutHendler}>
+            Выйти
+          </Button>
         </div>
       </div>
     </Header>

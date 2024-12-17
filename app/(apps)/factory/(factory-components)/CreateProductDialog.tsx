@@ -12,6 +12,7 @@ import {
 import { Input } from "@/ui/input";
 import { cn } from "@/utils/helpers/cn";
 import { Label } from "@/ui/label";
+import { CreateProductForm } from "./Form/CreateProductForm";
 
 interface CreateProductDialogProps {
   className?: string;
@@ -33,7 +34,7 @@ export const CreateProductDialog = ({
               Введите нужные параметры товара в форму создания
             </DialogDescription>
           </DialogHeader>
-
+          <CreateProductForm />
           <DialogFooter className="bg-background p-6 rounded-b-lg border-t border-border ">
             <Button type="submit" className="mr-2">
               Создать товар

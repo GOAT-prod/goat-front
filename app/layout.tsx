@@ -6,6 +6,7 @@ import { Provider } from "@/utils/providers/Providers";
 
 import { cn } from "@/utils/helpers/cn";
 import "./globals.css";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "goat logistic",

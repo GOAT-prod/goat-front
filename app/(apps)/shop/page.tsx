@@ -6,9 +6,9 @@ import { CatalogContainer } from "./(shop-components)/Catalog/CatalogContainer";
 export default async function Shop() {
   return (
     <>
-      <aside className="w-[var(--filters-width)] py-4 px-6  border-r border-border">
+      {/* <aside className="w-[var(--filters-width)] py-4 px-6  border-r border-border">
         <Filters />
-      </aside>
+      </aside> */}
       <CatalogContainer
         headerTitle="Товары"
         headerDetails={<CatalogSettings />}

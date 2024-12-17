@@ -17,15 +17,17 @@ import {
 } from "@/ui/select";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight } from "lucide-react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { FormContext } from "./RegisterPanel";
 
 export const loginSchema = z.object({
-  email: z.string().email({ message: "Некорректный email" }),
+  username: z.string().email({ message: "Некорректный email" }),
   password: z
     .string()
     .min(6, { message: "Пароль должен быть не менее 8 символов" }),
-  role: z.string(),
+  role: z.string().min(1, { message: "Выберите роль" }),
 });
 
 interface RegisterUserFormProps {
@@ -33,17 +35,19 @@ interface RegisterUserFormProps {
 }
 
 export const RegisterUserForm = ({ setActiveForm }: RegisterUserFormProps) => {
+  const { userForm, saveFormHandler } = useContext(FormContext);
+
   const loginForm = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: "",
-      password: "",
-      role: "shop",
+      username: userForm.user.username,
+      password: userForm.user.password,
+      role: userForm.user.role,
     },
   });
 
   const onRegisterSubmit = (values: z.infer<typeof loginSchema>) => {
-    console.log(values);
+    saveFormHandler("user", values);
     setActiveForm("client");
   };
 
@@ -66,7 +70,7 @@ export const RegisterUserForm = ({ setActiveForm }: RegisterUserFormProps) => {
               </FormItem>
             )}
             control={loginForm.control}
-            name="email"
+            name="username"
           />
           <FormField
             render={({ field }) => (
@@ -76,6 +80,7 @@ export const RegisterUserForm = ({ setActiveForm }: RegisterUserFormProps) => {
                   <Input
                     type="password"
                     placeholder="Введите пароль"
+                    autoComplete="on"
                     {...field}
                   />
                 </FormControl>
