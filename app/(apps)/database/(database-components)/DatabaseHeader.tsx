@@ -1,18 +1,21 @@
 "use client";
-import { GoatLogo } from "@/components/GoatLogo";
 import { Header } from "@/components/Header";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/ui/accordion";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { DatabaseSelectApp } from "./DatabaseSelectApp";
 
 export const DatabaseHeader = () => {
-  const router = useRouter();
+  const pathname = usePathname();
+
+  const getAppTitle = () => {
+    if (pathname.startsWith("/database/admin")) {
+      return "Приложение администратора";
+    } else if (pathname.startsWith("/database/shop")) {
+      return "Приложение клиента-потребителя";
+    } else if (pathname.startsWith("/database/factory")) {
+      return "Приложение клиента-поставщика";
+    }
+    return "Выберите приложение";
+  };
 
   return (
     <Header>
@@ -20,9 +23,7 @@ export const DatabaseHeader = () => {
         <DatabaseSelectApp />
       </div>
       <div className="flex flex-1 items-center justify-between py-5 pr-7 pl-6">
-        <p className="text-lg">
-          Приложение администратора логистического сервиса
-        </p>
+        <p className="text-lg">{getAppTitle()}</p>
       </div>
     </Header>
   );

@@ -15,7 +15,7 @@ export default function DatabaseLayout({
     <>
       <DatabaseHeader />
       <Container>
-        <main className="flex max-h-[calc(100vh-var(--header-height))] border border-border border-t-0 border-r-0">
+        <main className="flex h-[calc(100vh-var(--header-height))] border border-border border-t-0 border-r-0">
           {children}
         </main>
       </Container>

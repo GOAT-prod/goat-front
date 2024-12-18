@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/ui/button";
 import { cn } from "@/utils/helpers/cn";
 import { Check, Minus, Plus, X } from "lucide-react";
@@ -5,7 +6,7 @@ import { useState } from "react";
 
 interface CartItemProps {
   className?: string;
-  item: any;
+  item: CartItem;
 }
 
 export const CartItem = ({ className, item }: CartItemProps) => {

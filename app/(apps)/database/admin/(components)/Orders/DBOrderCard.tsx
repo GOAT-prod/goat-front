@@ -49,7 +49,6 @@ export const OrderCard = () => {
             <Copy size={18} />
           </Button>
         </div>
-        <InfoRow label="Username пользователя:" value="joshdoal@gmail.com" />
       </div>
       <div className="flex justify-between items-center">
         <div className="flex gap-2 flex-col text-sm">
@@ -62,17 +61,6 @@ export const OrderCard = () => {
             Icon={selectedStatus.Icon}
             className={selectedStatus.styles}
           />
-          <StatusBadge
-            label="Поставка"
-            className="border-2 bg-[#f5f2ff] border-[#826dd7]"
-          />
-          <Button
-            variant="ghost"
-            className="bg-[#FDE3DE] border-[#F24822] border-2"
-            size="icon"
-          >
-            <Trash />
-          </Button>
         </div>
       </div>
     </CardWrapper>

@@ -1,37 +1,48 @@
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
+import { Check, ChevronsUpDown, MapPinCheckInside } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "@/ui/popover";
 import { Button } from "@/ui/button";
 import {
   Command,
   CommandEmpty,
   CommandGroup,
-  CommandInput,
   CommandItem,
   CommandList,
 } from "@/ui/command";
 import { cn } from "@/utils/helpers/cn";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const appList = [
   {
     value: "goat market",
     label: "goat market",
+    service: "shop",
   },
   {
     value: "goat factory",
     label: "goat factory",
+    service: "factory",
   },
   {
     value: "goat dashboard",
     label: "goat dashboard",
+    service: "admin",
   },
 ];
 
 export function DatabaseSelectApp() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
+  const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    const defaultApp = appList.find((app) => pathname.includes(app.service));
+    setValue(defaultApp?.value || "");
+  }, [pathname]);
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -75,16 +86,22 @@ export function DatabaseSelectApp() {
                   key={app.value}
                   value={app.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
-                    setOpen(false);
+                    if (currentValue !== value) {
+                      setValue(currentValue);
+                      setOpen(false);
+                      router.push("/database/" + app.service);
+                    }
                   }}
+                  disabled={app.value === value}
                 >
                   {app.label}
-                  <Check
+
+                  <MapPinCheckInside
                     className={cn(
                       "ml-auto",
                       value === app.value ? "opacity-100" : "opacity-0"
                     )}
+                    size={16}
                   />
                 </CommandItem>
               ))}
