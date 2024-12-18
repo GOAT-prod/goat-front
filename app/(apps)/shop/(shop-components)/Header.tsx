@@ -37,7 +37,7 @@ export const ShopHeader = ({ className }: HeaderProps) => {
       <div className="flex flex-1 items-center justify-between py-5 pr-7 pl-6">
         <SeachInput className="flex-1" />
         <div className="flex items-center gap-2">
-          {/* <CartDrawer /> */}
+          <CartDrawer />
           <Link
             href="/shop/profile"
             className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary-hover border border-border h-8 w-auto px-1.5 rounded-md"

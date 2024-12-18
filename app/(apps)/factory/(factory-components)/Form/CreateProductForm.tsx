@@ -25,7 +25,7 @@ import {
 import { TextField } from "./TextField";
 import { AddImagesForm } from "./AddImagesForm";
 import { AddProductItem } from "./AddProductItem";
-import { AddMaterialsForm } from "./AddMatetialsForm";
+import { AddMatetialsForm } from "./AddMatetialsForm";
 
 export const CreateProductForm = () => {
   const createForm = useForm<z.infer<typeof productSchema>>({
@@ -94,7 +94,7 @@ export const CreateProductForm = () => {
           <div className="flex gap-6">
             <AddImagesForm form={createForm} />
             <div className="min-h-full w-[1px] bg-[#cecece]" />
-            <AddMaterialsForm form={createForm} />
+            <AddMatetialsForm form={createForm} />
             <div className="min-h-full w-[1px] bg-[#cecece]" />
             <AddProductItem form={createForm} />
           </div>

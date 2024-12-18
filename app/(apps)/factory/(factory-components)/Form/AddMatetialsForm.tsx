@@ -24,31 +24,24 @@ const productMaterials: ProductMaterial[] = [
   { Id: 5, Material: "Замша" },
 ];
 
-export const AddMaterialsForm = ({ form }: AddMatetialsFormProps) => {
+export const AddMatetialsForm = ({ form }: AddMatetialsFormProps) => {
   const { fields, append, remove } = useFieldArray({
     control: form.control,
     name: "materials",
   });
 
-  const selectedMaterialIds = form.watch("materials")?.map((m) => m.Id) || [];
-
   return (
     <div className="flex flex-col gap-2 min-w-[240px]">
       <Title className="text-sm font-medium" tag="h5" text="Материалы" />
-      <div className="flex flex-col gap-2 justify-start">
+      <div className="flex flex-col gap-2  justify-start ">
         <Button
           type="button"
           size="small"
           onClick={() => {
-            const availableMaterial = productMaterials.find(
-              (material) => !selectedMaterialIds.includes(material.Id)
-            );
-            if (availableMaterial) {
-              append({
-                Id: availableMaterial.Id,
-                Material: availableMaterial.Material,
-              });
-            }
+            append({
+              Id: productMaterials[0].Id,
+              Material: productMaterials[0].Material,
+            });
           }}
         >
           Добавить материал
@@ -58,69 +51,62 @@ export const AddMaterialsForm = ({ form }: AddMatetialsFormProps) => {
         </p>
       </div>
       <div className="flex flex-col gap-2 h-[300px] overflow-auto pr-3 scrollbar px-3 py-1">
-        {fields.map((field, index) => {
-          const availableMaterials = productMaterials.filter(
-            (material) =>
-              !selectedMaterialIds.includes(material.Id) ||
-              material.Id === field.Id
-          );
-
-          return (
-            <div key={field.id} className="flex items-center gap-2">
-              <FormField
-                control={form.control}
-                name={`materials.${index}.Id`}
-                render={({ field }) => (
-                  <FormItem>
-                    <Select
-                      onValueChange={(value) => {
-                        const selectedMaterial = productMaterials.find(
-                          (material) => String(material.Id) === value
+        {fields.map((field, index) => (
+          <div key={field.id} className="flex items-center gap-2 ">
+            <FormField
+              control={form.control}
+              name={`materials.${index}.Id`}
+              render={({ field }) => (
+                <FormItem>
+                  <Select
+                    // При выборе материала обновляем Id и Material
+                    onValueChange={(value) => {
+                      const selectedMaterial = productMaterials.find(
+                        (material) => String(material.Id) === value
+                      );
+                      if (selectedMaterial) {
+                        form.setValue(
+                          `materials.${index}.Id`,
+                          selectedMaterial.Id
                         );
-                        if (selectedMaterial) {
-                          form.setValue(
-                            `materials.${index}.Id`,
-                            selectedMaterial.Id
-                          );
-                          form.setValue(
-                            `materials.${index}.Material`,
-                            selectedMaterial.Material
-                          );
-                        }
-                      }}
-                      value={String(field.value)}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="min-w-[180px]">
-                          <SelectValue placeholder="Выберите материал" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {availableMaterials.map((material) => (
-                          <SelectItem
-                            key={material.Id}
-                            value={String(material.Id)}
-                          >
-                            {material.Material}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button
-                type="button"
-                className="h-6 w-6"
-                size="icon"
-                onClick={() => remove(index)}
-              >
-                ✕
-              </Button>
-            </div>
-          );
-        })}
+                        form.setValue(
+                          `materials.${index}.Material`,
+                          selectedMaterial.Material
+                        );
+                      }
+                    }}
+                    value={String(field.value)} // Устанавливаем значение Id
+                  >
+                    <FormControl>
+                      <SelectTrigger className="min-w-[180px]">
+                        <SelectValue placeholder="Выберите материал" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {productMaterials.map((material) => (
+                        <SelectItem
+                          key={material.Id}
+                          value={String(material.Id)}
+                        >
+                          {material.Material}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button
+              type="button"
+              className="h-6 w-6"
+              size="icon"
+              onClick={() => remove(index)}
+            >
+              ✕
+            </Button>
+          </div>
+        ))}
       </div>
     </div>
   );

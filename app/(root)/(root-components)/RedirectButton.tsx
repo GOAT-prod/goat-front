@@ -14,5 +14,16 @@ export const RedirectButton = ({ src = "/" }: RedirectButtonProps) => {
     router.push(src);
   };
 
-  return <Button onClick={onHandleNavigate}>Войти в систему</Button>;
+  const onHandleNavigateToDB = () => {
+    router.push("/database");
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      <Button onClick={onHandleNavigate}>Войти в систему</Button>
+      <Button variant="secondary" onClick={onHandleNavigateToDB}>
+        Тестировать базу данных
+      </Button>
+    </div>
+  );
 };
