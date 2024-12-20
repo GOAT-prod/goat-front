@@ -2,20 +2,25 @@
 import { Header } from "@/components/Header";
 import { usePathname } from "next/navigation";
 import { DatabaseSelectApp } from "./DatabaseSelectApp";
+import { UserSelect } from "./UserSelect";
+import { useEffect, useState } from "react";
 
 export const DatabaseHeader = () => {
+  const [appStatus, setAppStatus] = useState({ title: "", status: "" });
   const pathname = usePathname();
 
-  const getAppTitle = () => {
+  useEffect(() => {
     if (pathname.startsWith("/database/admin")) {
-      return "Приложение администратора";
+      setAppStatus({ title: "Приложение администратора", status: "admin" });
     } else if (pathname.startsWith("/database/shop")) {
-      return "Приложение клиента-потребителя";
+      setAppStatus({ title: "Приложение клиента-потребителя", status: "shop" });
     } else if (pathname.startsWith("/database/factory")) {
-      return "Приложение клиента-поставщика";
+      setAppStatus({
+        title: "Приложение клиента-поставщика",
+        status: "factory",
+      });
     }
-    return "Выберите приложение";
-  };
+  }, [pathname]);
 
   return (
     <Header>
@@ -23,7 +28,8 @@ export const DatabaseHeader = () => {
         <DatabaseSelectApp />
       </div>
       <div className="flex flex-1 items-center justify-between py-5 pr-7 pl-6">
-        <p className="text-lg">{getAppTitle()}</p>
+        <p className="text-lg">{appStatus.title}</p>
+        <UserSelect status={appStatus.status} />
       </div>
     </Header>
   );

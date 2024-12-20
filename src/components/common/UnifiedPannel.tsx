@@ -1,4 +1,5 @@
 import { Title } from "@/ui/title";
+import React from "react";
 
 interface UnifiedPanelProps<T> {
   title: string;
@@ -21,7 +22,9 @@ export const UnifiedPanel = <T,>({
       </header>
 
       <div className="flex flex-col gap-3 px-2 pb-2 overflow-auto max-h-[calc(100%-32px)] scrollbar">
-        {items.map((item, index) => renderItem(item, index))}
+        {items.map((item, index) => (
+          <React.Fragment key={index}>{renderItem(item, index)}</React.Fragment>
+        ))}
       </div>
     </section>
   );

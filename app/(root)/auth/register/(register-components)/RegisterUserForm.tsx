@@ -116,6 +116,7 @@ export const RegisterUserForm = ({ setActiveForm }: RegisterUserFormProps) => {
             control={loginForm.control}
             name="role"
           />
+
           <div className="flex flex-col gap-5 items-center">
             <Button
               type="submit"

@@ -1,6 +1,7 @@
 import { UnifiedPanel } from "@/components/UnifiedPannel";
+import { UserDB } from "../../(services)/types/types";
 
-export const ReportsPanel = () => {
+export const ReportsPanel = ({ user }: { user: UserDB }) => {
   return (
     <UnifiedPanel
       title="Отчёт по продажам товаров"

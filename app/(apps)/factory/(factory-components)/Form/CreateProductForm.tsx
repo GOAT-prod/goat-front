@@ -11,17 +11,8 @@ import {
 import { Input } from "@/ui/input";
 import { productSchema } from "@/utils/constants/productSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useFieldArray, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { Title } from "@/ui/title";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/ui/select";
 import { TextField } from "./TextField";
 import { AddImagesForm } from "./AddImagesForm";
 import { AddProductItem } from "./AddProductItem";

@@ -1,11 +1,9 @@
-import { ProductsPanel } from "./Product/DBProductsPanel";
-import { ReportsPanel } from "./Report/DBReportsPanel";
+import UserFactoryContainer from "./UserFactoryContainer";
 
 export default async function DatabaseFactory() {
   return (
     <>
-      <ProductsPanel />
-      <ReportsPanel />
+      <UserFactoryContainer />
     </>
   );
 }

@@ -1,14 +1,25 @@
+"use client";
 import { UnifiedPanel } from "@/components/UnifiedPannel";
-import { Button } from "@/ui/button";
 import { ProductCard } from "./DBProductCard";
+import { useGetProductsQuery } from "../../(services)/requests/getProductByUser";
+import { DBCreateProduct } from "./DBCreateProduct";
+import { UserDB } from "../../(services)/types/types";
 
-export const ProductsPanel = () => {
+interface ProductPanelProps {
+  user: UserDB;
+}
+
+export const ProductsPanel = ({ user }: ProductPanelProps) => {
+  const { data: products } = useGetProductsQuery(user.clientId);
+
   return (
-    <UnifiedPanel
-      title="Товары"
-      items={Array(6).fill({})}
-      renderItem={() => <ProductCard item={{}} />}
-      actionButton={<Button size="small">Добавить товар</Button>}
-    />
+    <>
+      <UnifiedPanel
+        title="Товары"
+        items={products?.data || []}
+        renderItem={(item) => <ProductCard item={item} />}
+        actionButton={<DBCreateProduct />}
+      />
+    </>
   );
 };
