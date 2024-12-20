@@ -10,10 +10,12 @@ import {
 } from "@/ui/dialog";
 import { cn } from "@/utils/helpers/cn";
 import { Button } from "@/ui/button";
-import { CreateProductForm } from "./DBCreateProductForm";
 import { useState } from "react";
+import { UpdateProductForm } from "./DBEditProductForm";
+import { Pencil } from "lucide-react";
+import { ProductDB } from "../../../(services)/types/types";
 
-export const DBCreateProduct = () => {
+export const DBEditDialog = ({ item }: { item: ProductDB }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {
@@ -23,17 +25,17 @@ export const DBCreateProduct = () => {
   return (
     <div className={cn("")}>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger className="text-sm rounded-md border border-border h-8 px-1.5 font-medium shadow-sm hover:bg-secondary-hover ">
-          Создать товар
+        <DialogTrigger className="bg-blue-200 border-blue-500 border-2 h-8 w-8 rounded-md hover:bg-blue-100 flex items-center justify-center">
+          <Pencil />
         </DialogTrigger>
         <DialogContent className="bg-white p-0 min-w-[1300px]">
           <DialogHeader className="px-6 pt-6 ">
-            <DialogTitle>Создание товара</DialogTitle>
+            <DialogTitle>Редактирование товара</DialogTitle>
             <DialogDescription className="text-base">
-              Введите нужные параметры товара в форму создания
+              Введите нужные параметры товара в форму редактирования
             </DialogDescription>
           </DialogHeader>
-          <CreateProductForm onClose={handleClose} />
+          <UpdateProductForm product={item} onClose={handleClose} />
           <DialogFooter className="bg-background p-6 rounded-b-lg border-t border-border max-w-[1298px]">
             <DialogClose asChild>
               <Button type="button" variant="secondary">

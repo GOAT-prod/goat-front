@@ -13,10 +13,9 @@ export default function UserShopContainer() {
 
   return (
     <>
-      <h1>{selectedShopUser?.id}</h1>
       <CatalogPanel />
-      <CartPanel />
-      <OrdersPanel />
+      <CartPanel user={selectedShopUser} />
+      <OrdersPanel user={selectedShopUser} />
     </>
   );
 }

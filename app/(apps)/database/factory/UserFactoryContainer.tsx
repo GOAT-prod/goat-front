@@ -12,7 +12,6 @@ export default function UserFactoryContainer() {
 
   return (
     <>
-      <h1>{selectedFactoryUser?.name}</h1>
       <ProductsPanel user={selectedFactoryUser} />
       <ReportsPanel user={selectedFactoryUser} />
     </>

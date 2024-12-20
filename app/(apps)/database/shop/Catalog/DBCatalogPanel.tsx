@@ -7,10 +7,13 @@ import { useGetProductsQuery } from "../../(services)/requests/getProducts";
 export const CatalogPanel = () => {
   const { data: products, isLoading } = useGetProductsQuery();
 
+  const filteredProducts =
+    products?.data.filter((product) => product.status !== "Deleted") || [];
+
   if (isLoading) {
     return (
       <UnifiedPanel
-        title="Пользователи сервиса"
+        title="Каталог"
         items={Array(6).fill({})}
         renderItem={() => <Skeleton className="w-full h-[176px]" />}
       />
@@ -20,7 +23,7 @@ export const CatalogPanel = () => {
   return (
     <UnifiedPanel
       title="Каталог"
-      items={products?.data || []}
+      items={filteredProducts}
       renderItem={(item) => <CatalogCard item={item} />}
     />
   );

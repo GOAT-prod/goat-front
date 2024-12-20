@@ -2,15 +2,36 @@
 import { Button } from "@/ui/button";
 import { cn } from "@/utils/helpers/cn";
 import { Check, Minus, Plus, X } from "lucide-react";
-import { useState } from "react";
+import { CartItemDB } from "../../(services)/types/types";
+import { useDeleteCartItem } from "../../(services)/requests/deleteCartItem";
+import { useUpdateCartItem } from "../../(services)/requests/updateCartItem";
+import { queryClient } from "@/utils/api/query-client";
 
 interface CartItemProps {
   className?: string;
-  item: CartItem;
+  item: CartItemDB;
+  userId: number;
 }
 
-export const CartItem = ({ className, item }: CartItemProps) => {
-  const [isChecked, setIsChecked] = useState(false);
+export const CartItem = ({ className, item, userId }: CartItemProps) => {
+  const { mutate: updateCartItem } = useUpdateCartItem({
+    onSuccess: () =>
+      queryClient.invalidateQueries({ queryKey: ["cart", userId] }),
+  });
+  const { mutate: deleteCartItem } = useDeleteCartItem(userId);
+
+  const handleCountChange = (newCount: number) => {
+    if (newCount <= 0) {
+      deleteCartItem(item.id);
+    } else {
+      updateCartItem({ ...item, selectCount: newCount });
+    }
+  };
+
+  // Обработчик изменения выбора
+  const handleSelectToggle = () => {
+    updateCartItem({ ...item, isSelected: !item.isSelected });
+  };
 
   return (
     <div
@@ -19,12 +40,12 @@ export const CartItem = ({ className, item }: CartItemProps) => {
         className
       )}
     >
-      <p className="font-medium">{item.name}</p>
+      <p className="font-medium">{item.productName}</p>
       <div className="flex justify-between items-center">
-        <p className="font-semibold text-lg">{item.price}</p>
+        <p className="font-semibold text-lg">{item.price} ₽</p>
         <div className="flex gap-2">
           <div className="flex gap-1 text-sm">
-            <span className="font-medium ">Цвет:</span>
+            <span className="font-medium">Цвет:</span>
             <span className="text-[#8F8F8F]">{item.color}</span>
           </div>
           <div className="flex gap-1 text-sm">
@@ -33,42 +54,46 @@ export const CartItem = ({ className, item }: CartItemProps) => {
           </div>
         </div>
       </div>
+
       <div className="flex justify-between items-center">
         <Button
           variant={item.isSelected ? "default" : "outline"}
           size="icon"
           className="w-8 h-8"
-          onClick={() => setIsChecked(!isChecked)}
+          onClick={handleSelectToggle}
         >
           <Check size={24} className={cn(!item.isSelected && "hidden")} />
         </Button>
+
         <div className="flex justify-end items-center gap-2">
           <div className="flex gap-[5px] bg-black rounded-lg p-1">
             <Button
               size="icon"
               className="w-8 h-8"
-              //   onClick={() => setCount(count - 1)}
+              onClick={() => handleCountChange(item.selectCount - 1)}
+              disabled={item.selectCount <= 1}
             >
               <Minus />
             </Button>
 
-            <div className="bg-primary text-white w-8 h-8 rounded-lg p-2 flex items-center justify-center cursor-pointer">
-              {item.StockCount}
+            <div className="bg-primary text-white w-8 h-8 rounded-lg p-2 flex items-center justify-center">
+              {item.selectCount}
             </div>
+
             <Button
               size="icon"
               className="w-8 h-8"
-              //   onClick={() => setCount(count + 1)}
-              //   disabled={count === productItem.StockCount}
+              onClick={() => handleCountChange(item.selectCount + 1)}
             >
               <Plus />
             </Button>
           </div>
+
           <Button
-            variant={"ghost"}
+            variant="ghost"
             size="icon"
             className="w-8 h-8"
-            //   onClick={() => setCount(count - 1)}
+            onClick={() => deleteCartItem(item.id)}
           >
             <X size={24} />
           </Button>

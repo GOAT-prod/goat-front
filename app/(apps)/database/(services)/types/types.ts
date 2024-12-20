@@ -22,6 +22,7 @@ export interface OrderDB {
   type: OrderTypeDB;
   status: OrderStatusDB;
   createDate: Date;
+  deliveryDate: Date;
   username: string;
   totalWeight: number;
   totalPrice: number;
@@ -42,11 +43,21 @@ export enum OrderStatusDB {
 
 export interface ProductDB {
   id: number;
-  factoryInfo: FactoryDB;
+  factoryId: number;
+  factoryName: string;
+  brand: string;
   name: string;
   price: number;
-  status: ProductStatus;
-  items: ProductItem[];
+  images: Image[];
+  materials: ProductMaterialDB[];
+  status: ProductStatusDB;
+  items: ProductItemDB[];
+}
+
+interface Image {
+  id: number;
+  url: string;
+  productId: number;
 }
 
 export enum ProductStatusDB {
@@ -54,7 +65,7 @@ export enum ProductStatusDB {
   Deleted = "Deleted",
 }
 
-export interface FactoryDB {
+export interface ProductMaterialDB {
   id: number;
   name: string;
 }
@@ -70,12 +81,13 @@ export interface ProductItemDB {
 export interface CartDB {
   id: number;
   userId: number;
-  cartItems: CartItem[];
+  cartItems: CartItemDB[];
 }
 
 export interface CartItemDB {
   id: number;
-  productId: number;
+  cartId: number;
+  productItemId: number;
   productName: string;
   price: number;
   color: string;

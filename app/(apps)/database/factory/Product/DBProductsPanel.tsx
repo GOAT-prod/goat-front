@@ -12,11 +12,14 @@ interface ProductPanelProps {
 export const ProductsPanel = ({ user }: ProductPanelProps) => {
   const { data: products } = useGetProductsQuery(user.clientId);
 
+  const filteredProducts =
+    products?.data.filter((product) => product.status !== "Deleted") || [];
+
   return (
     <>
       <UnifiedPanel
         title="Товары"
-        items={products?.data || []}
+        items={filteredProducts}
         renderItem={(item) => <ProductCard item={item} />}
         actionButton={<DBCreateProduct />}
       />

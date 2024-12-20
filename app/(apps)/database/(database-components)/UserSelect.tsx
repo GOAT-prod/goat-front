@@ -17,7 +17,9 @@ export const UserSelect = ({ status }: { status: string }) => {
   const selectUser = useUserStore((state) => state.selectUser);
 
   const filterUsers = useMemo(() => {
-    return users?.data.filter((user) => user.role === status);
+    return users?.data
+      .filter((user) => user.role === status)
+      .filter((user) => user.status !== "Deleted");
   }, [users, status]);
 
   const handleUserSelect = (userId: string) => {

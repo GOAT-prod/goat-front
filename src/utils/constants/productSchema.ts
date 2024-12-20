@@ -1,11 +1,9 @@
 import { z } from "zod";
 
 export const productSchema = z.object({
-  brandName: z.string().min(1, { message: "Название бренда обязательно" }),
-  factory: z.object({
-    factoryName: z.string(),
-    id: z.number().int(),
-  }),
+  brand: z.string(),
+  factoryId: z.number().int(),
+  factoryName: z.string(),
   id: z.number().int().nonnegative("ID должен быть положительным числом."),
   items: z
     .array(
@@ -28,7 +26,7 @@ export const productSchema = z.object({
           .optional(),
         weight: z
           .number()
-          .positive("Вес должен быть положительным число")
+          .positive("Вес должен быть положительным числом")
           .optional(),
       })
     )
@@ -40,8 +38,11 @@ export const productSchema = z.object({
           .number()
           .int()
           .nonnegative("ID изображения должен быть положительным числом."),
-        imageUrl: z.string(),
-        // .url("Некорректный URL изображения")
+        url: z.string().url("Некорректный URL изображения"),
+        productId: z
+          .number()
+          .int()
+          .nonnegative("ID продукта должен быть положительным числом."), // Добавлено поле productId
       })
     )
     .nonempty("Необходимо добавить хотя бы одно изображение"),
@@ -51,11 +52,11 @@ export const productSchema = z.object({
   materials: z
     .array(
       z.object({
-        Id: z
+        id: z
           .number()
           .int()
           .nonnegative("ID материала должен быть положительным числом."),
-        Material: z.string(),
+        name: z.string(),
       })
     )
     .nonempty("Необходимо добавить хотя бы один материал"),

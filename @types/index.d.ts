@@ -30,7 +30,7 @@ interface ProductItem {
 
 interface ProductMaterial {
   Id: number;
-  Material: string;
+  Name: string;
 }
 
 interface Filters {

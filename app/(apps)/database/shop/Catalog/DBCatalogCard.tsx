@@ -1,31 +1,45 @@
 import { CardWrapper } from "@/components/CardWrapper";
 import { InfoRow } from "@/components/InfoRow";
 import { CatalogCardItem } from "./DBCatalogCardItem";
+import { ProductDB } from "../../(services)/types/types";
+import { useGetCartQuery } from "../../(services)/requests/getCart";
+import { useUserStore } from "../../(services)/store/userStore";
 
 interface CatalogCardProps {
-  item: any;
+  item: ProductDB;
 }
 
 export const CatalogCard = ({ item }: CatalogCardProps) => {
+  const { selectedShopUser } = useUserStore();
+  const { data: cart, isLoading } = useGetCartQuery(selectedShopUser!.id);
+
   return (
     <CardWrapper>
       <div className="text-lg font-medium">
-        <p>Nike Air 25</p>
+        <p>
+          {item.brand} {item.name}
+        </p>
       </div>
       <div className="flex gap-5 text-sm">
-        <InfoRow label="Завод:" value="Nike Factory" />
-        <InfoRow label="Цена:" value="42 000 ₽" />
+        <InfoRow label="Завод:" value={item.factoryName} />
+        <InfoRow label="Цена:" value={String(item.price) + " $"} />
       </div>
       <InfoRow
         label="Материалы:"
-        value="ткань, кожа, алькантара"
+        value={item.materials.map((material) => material.name).join(", ")}
         className="text-sm"
       />
       <div className="flex justify-between items-center">
         <div className="flex flex-col gap-2 w-full ">
-          <CatalogCardItem item={item} />
-          <CatalogCardItem item={item} />
-          <CatalogCardItem item={item} />
+          {!isLoading &&
+            item.items.map((productItem) => (
+              <CatalogCardItem
+                item={item}
+                key={productItem.id}
+                productItem={productItem}
+                cart={cart!.data}
+              />
+            ))}
         </div>
       </div>
     </CardWrapper>
