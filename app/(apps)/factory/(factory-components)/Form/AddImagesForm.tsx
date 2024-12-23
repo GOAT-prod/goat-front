@@ -1,3 +1,4 @@
+import { useUserStore } from "@/store/userStore";
 import { Button } from "@/ui/button";
 import { FormControl, FormField, FormItem, FormMessage } from "@/ui/form";
 import { Input } from "@/ui/input";
@@ -29,7 +30,7 @@ export const AddImagesForm = ({ form }: AddImagesFormProps) => {
         <Button
           type="button"
           size="small"
-          onClick={() => append({ id: 0, imageUrl: "" })}
+          onClick={() => append({ id: 0, url: "", productId: 0 })}
         >
           Добавить изображение товара
         </Button>
@@ -43,7 +44,7 @@ export const AddImagesForm = ({ form }: AddImagesFormProps) => {
           <FormField
             key={field.id}
             control={form.control}
-            name={`images.${index}.imageUrl`}
+            name={`images.${index}.url`}
             render={({ field }) => (
               <div className="flex items-center gap-2">
                 <FormItem>

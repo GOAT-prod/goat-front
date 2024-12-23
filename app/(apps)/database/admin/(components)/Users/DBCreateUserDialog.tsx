@@ -32,6 +32,7 @@ import {
 import { useRegisterMutation } from "../../../(services)/requests/registerUser";
 import { queryClient } from "@/utils/api/query-client";
 import { Title } from "@/ui/title";
+import { useState } from "react";
 
 export const registerSchema = z.object({
   username: z.string().email({ message: "Некорректный email" }),
@@ -46,6 +47,12 @@ export const registerSchema = z.object({
 });
 
 export const RegisterDialog = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   const loginForm = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -71,12 +78,15 @@ export const RegisterDialog = () => {
 
   const onRegisterSubmit = (values: z.infer<typeof registerSchema>) => {
     mutate(values);
+    handleClose();
   };
 
   return (
-    <Dialog>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button>Добавить пользователя</Button>
+        <Button size="small" className="w-full">
+          Добавить пользователя
+        </Button>
       </DialogTrigger>
       <DialogContent className="bg-white p-0 max-w-[600px]">
         <Form {...loginForm}>

@@ -1,20 +1,10 @@
 import { UnifiedPanel } from "@/components/UnifiedPannel";
-import { Button } from "@/ui/button";
 import { CartItem } from "./DBCartCard";
 import { useGetCartQuery } from "../../(services)/requests/getCart";
-import { useUserStore } from "../../(services)/store/userStore";
 import { UserDB } from "../../(services)/types/types";
 import { Skeleton } from "@/ui/skeleton";
-
-// const cartItem = {
-//   id: 9,
-//   isSelected: true,
-//   name: "Mizuno Wave Rider 26",
-//   price: "12 490 ₽",
-//   color: "Фиолетовый",
-//   size: "44",
-//   StockCount: 7,
-// };
+import { OrderDialog } from "../Orders/DBOrderDialog";
+import { AlertCart } from "./DBAlertCart";
 
 export const CartPanel = ({ user }: { user: UserDB }) => {
   const { data: cart, isLoading } = useGetCartQuery(user.id);
@@ -30,11 +20,18 @@ export const CartPanel = ({ user }: { user: UserDB }) => {
   }
 
   return (
-    <UnifiedPanel
-      title="Корзина"
-      items={cart?.data.cartItems || []}
-      renderItem={(item) => <CartItem item={item} userId={user.id} />}
-      actionButton={<Button size="small">Создать заказ</Button>}
-    />
+    <>
+      <UnifiedPanel
+        title="Корзина"
+        items={cart?.data.cartItems || []}
+        renderItem={(item) => <CartItem item={item} userId={user.id} />}
+        actionButton={
+          <div className="flex items-center gap-3">
+            <OrderDialog cart={cart!.data} />
+            <AlertCart user={user} />
+          </div>
+        }
+      />
+    </>
   );
 };

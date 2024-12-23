@@ -24,7 +24,7 @@ export default function UserFactoryContainer() {
   return (
     <>
       <ProductsPanel user={selectedFactoryUser} />
-      <ReportsPanel user={selectedFactoryUser} />
+      <ReportsPanel />
     </>
   );
 }

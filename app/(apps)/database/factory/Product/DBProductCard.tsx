@@ -22,7 +22,7 @@ export const ProductCard = ({ item }: ProductCardProps) => {
             <p>{item.name}</p>
           </div>
           <div className="flex gap-5 text-sm">
-            <InfoRow label="Цена:" value={`${item.price} ₽`} />
+            <InfoRow label="Цена:" value={`${item.price} $`} />
           </div>
           <InfoRow
             label="Материалы:"

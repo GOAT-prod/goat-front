@@ -8,7 +8,7 @@ export default async function Factory() {
         <Filters />
       </aside> */}
       <CatalogContainer headerTitle="Товары">
-        <CreateProductDialog />
+        {/* <CreateProductDialog /> */}
         <div>Список продуктов</div>
         {/* <ProductsCatalog /> */}
       </CatalogContainer>

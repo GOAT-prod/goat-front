@@ -27,7 +27,7 @@ export const OrdersPanel = () => {
     <UnifiedPanel
       title="Заказы и поставки"
       items={activeOrders || []}
-      renderItem={(item) => <OrderCard item={item} />}
+      renderItem={(item) => <OrderCard item={item} isAdmin />}
     />
   );
 };

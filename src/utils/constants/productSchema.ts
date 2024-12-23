@@ -19,7 +19,7 @@ export const productSchema = z.object({
           .int()
           .nonnegative("Размер должен быть положительным числом")
           .optional(),
-        stockCount: z
+        count: z
           .number()
           .int()
           .nonnegative("Количество на складе должно быть положительным числом")

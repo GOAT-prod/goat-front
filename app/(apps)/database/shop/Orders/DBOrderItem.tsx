@@ -1,19 +1,23 @@
-"use client";
 import { Button } from "@/ui/button";
 import { cn } from "@/utils/helpers/cn";
 import { Check, Minus, Plus, X } from "lucide-react";
 import { CartItemDB } from "../../(services)/types/types";
-import { useDeleteCartItem } from "../../(services)/requests/deleteCartItem";
 import { useUpdateCartItem } from "../../(services)/requests/updateCartItem";
 import { queryClient } from "@/utils/api/query-client";
+import { useDeleteCartItem } from "../../(services)/requests/deleteCartItem";
 
-interface CartItemProps {
+interface OrderItemProps {
+  className?: string;
+  item: CartItemDB;
+}
+
+interface OrderItemProps {
   className?: string;
   item: CartItemDB;
   userId: number;
 }
 
-export const CartItem = ({ className, item, userId }: CartItemProps) => {
+export const OrderItem = ({ className, item, userId }: OrderItemProps) => {
   const { mutate: updateCartItem } = useUpdateCartItem({
     onSuccess: () =>
       queryClient.invalidateQueries({ queryKey: ["cart", userId] }),
@@ -28,7 +32,6 @@ export const CartItem = ({ className, item, userId }: CartItemProps) => {
     }
   };
 
-  // Обработчик изменения выбора
   const handleSelectToggle = () => {
     updateCartItem({ ...item, isSelected: !item.isSelected });
   };
@@ -36,34 +39,30 @@ export const CartItem = ({ className, item, userId }: CartItemProps) => {
   return (
     <div
       className={cn(
-        "bg-white p-4 rounded-lg hover:border-border-hover border shadow flex flex-col gap-2",
+        "bg-white p-4 rounded-lg shadow flex justify-between",
         className
       )}
     >
-      <p className="font-medium">{item.productName}</p>
-      <div className="flex justify-between items-center">
-        <p className="font-semibold text-lg">{item.price} $</p>
+      {/* Название + вариант */}
+      <div className="flex flex-col gap-3 justify-center">
+        <p className="font-medium text-lg">{item.productName}</p>
         <div className="flex gap-2">
-          <div className="flex gap-1 text-sm">
+          <div className="flex gap-1">
             <span className="font-medium">Цвет:</span>
             <span className="text-[#8F8F8F]">{item.color}</span>
           </div>
-          <div className="flex gap-1 text-sm">
+          <div className="flex gap-1">
             <span className="font-medium">Размер:</span>
             <span className="text-[#8F8F8F]">{item.size}</span>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-between items-center">
-        <Button
-          variant={item.isSelected ? "default" : "outline"}
-          size="icon"
-          className="w-8 h-8"
-          onClick={handleSelectToggle}
-        >
-          <Check size={24} className={cn(!item.isSelected && "hidden")} />
-        </Button>
+      {/* Количество и цена */}
+      <div className="flex flex-col items-center gap-2">
+        <div className="font-semibold px-2 py-1 bg-[#f0f7ff] border-2 border-[#52AEFF] rounded-lg w-full text-center">
+          {item.price} $
+        </div>
 
         <div className="flex justify-end items-center gap-2">
           <div className="flex gap-[5px] bg-black rounded-lg p-1">
@@ -76,7 +75,7 @@ export const CartItem = ({ className, item, userId }: CartItemProps) => {
               <Minus />
             </Button>
 
-            <div className="bg-primary text-white w-8 h-8 rounded-lg p-2 flex items-center justify-center">
+            <div className="bg-primary text-white w-8 h-8 rounded-lg p-2 flex items-center justify-center cursor-pointer">
               {item.selectCount}
             </div>
 
@@ -90,12 +89,12 @@ export const CartItem = ({ className, item, userId }: CartItemProps) => {
           </div>
 
           <Button
-            variant="ghost"
+            variant={item.isSelected ? "default" : "outline"}
             size="icon"
             className="w-8 h-8"
-            onClick={() => deleteCartItem(item.id)}
+            onClick={handleSelectToggle}
           >
-            <X size={24} />
+            <X />
           </Button>
         </div>
       </div>

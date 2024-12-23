@@ -40,7 +40,7 @@ export const AddProductItem = ({ form }: AddProductItemProps) => {
               id: 0,
               color: "",
               size: undefined,
-              stockCount: undefined,
+              count: undefined,
               weight: undefined,
             })
           }
@@ -120,7 +120,7 @@ export const AddProductItem = ({ form }: AddProductItemProps) => {
 
             <FormField
               control={form.control}
-              name={`items.${index}.stockCount`}
+              name={`items.${index}.count`}
               render={({ field }) => (
                 <FormItem>
                   <FormControl>

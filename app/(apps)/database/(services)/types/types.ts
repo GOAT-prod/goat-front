@@ -17,6 +17,12 @@ export interface UserDB {
   status: UserStatusDB;
 }
 
+export interface GroupedUsersDB {
+  role: "factory" | "shop";
+  count: number;
+  users: UserDB[];
+}
+
 export interface OrderDB {
   id: string;
   type: OrderTypeDB;
@@ -82,6 +88,7 @@ export interface CartDB {
   id: number;
   userId: number;
   cartItems: CartItemDB[];
+  totalSelectedPrice: number;
 }
 
 export interface CartItemDB {

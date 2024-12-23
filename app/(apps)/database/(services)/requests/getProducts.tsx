@@ -2,11 +2,14 @@ import { dbapi } from "@/utils/api/dbinstance";
 import { ProductDB } from "../types/types";
 import { useQuery } from "@tanstack/react-query";
 
-export const getProducts = () => dbapi.get<ProductDB[]>(`products`);
+export const getProducts = (isPopular: boolean) => {
+  const url = isPopular ? "products?byTopSell=true" : "products";
+  return dbapi.get<ProductDB[]>(url);
+};
 
-export const useGetProductsQuery = () => {
+export const useGetProductsQuery = (isPopular: boolean) => {
   return useQuery({
-    queryKey: ["products"],
-    queryFn: getProducts,
+    queryKey: ["products", isPopular],
+    queryFn: () => getProducts(isPopular),
   });
 };

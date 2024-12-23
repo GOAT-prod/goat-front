@@ -25,7 +25,7 @@ export const AddProductItem = ({ form }: AddProductItemProps) => {
   });
 
   return (
-    <div className="flex flex-col gap-2 min-w-[500px] flex-1">
+    <div className="flex flex-col gap-2 min-w-[600px] flex-1">
       <Title
         className="text-sm font-medium"
         tag="h5"
@@ -40,7 +40,7 @@ export const AddProductItem = ({ form }: AddProductItemProps) => {
               id: 0,
               color: "",
               size: undefined,
-              stockCount: undefined,
+              count: undefined,
               weight: undefined,
             })
           }
@@ -103,9 +103,13 @@ export const AddProductItem = ({ form }: AddProductItemProps) => {
                       type="number"
                       placeholder="Размер"
                       {...field}
-                      onChange={(e) =>
-                        field.onChange(Number(e.target.value) ?? undefined)
-                      }
+                      value={field.value ?? ""}
+                      onChange={(e) => {
+                        const value = e.target.value
+                          ? Number(e.target.value)
+                          : undefined;
+                        field.onChange(value);
+                      }}
                       icon={<Ruler size={16} />}
                     />
                   </FormControl>
@@ -116,7 +120,7 @@ export const AddProductItem = ({ form }: AddProductItemProps) => {
 
             <FormField
               control={form.control}
-              name={`items.${index}.stockCount`}
+              name={`items.${index}.count`}
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
@@ -125,9 +129,13 @@ export const AddProductItem = ({ form }: AddProductItemProps) => {
                       className="w-[110px]"
                       placeholder="Кол.во"
                       {...field}
-                      onChange={(e) =>
-                        field.onChange(Number(e.target.value) ?? undefined)
-                      }
+                      value={field.value ?? ""}
+                      onChange={(e) => {
+                        const value = e.target.value
+                          ? Number(e.target.value)
+                          : undefined;
+                        field.onChange(value);
+                      }}
                       icon={<Calculator size={16} />}
                     />
                   </FormControl>
@@ -147,9 +155,13 @@ export const AddProductItem = ({ form }: AddProductItemProps) => {
                       type="number"
                       placeholder="Вес"
                       {...field}
-                      onChange={(e) =>
-                        field.onChange(Number(e.target.value) ?? undefined)
-                      }
+                      value={field.value ?? ""}
+                      onChange={(e) => {
+                        const value = e.target.value
+                          ? Number(e.target.value)
+                          : undefined;
+                        field.onChange(value);
+                      }}
                       icon={<Weight size={16} />}
                     />
                   </FormControl>

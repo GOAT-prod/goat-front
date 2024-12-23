@@ -1,4 +1,3 @@
-import { Button } from "@/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -9,44 +8,37 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/ui/dialog";
-import { Input } from "@/ui/input";
-import { cn } from "@/utils/helpers/cn";
-import { Label } from "@/ui/label";
-import { CreateProductForm } from "./Form/CreateProductForm";
+import { Button } from "@/ui/button";
+import { useState } from "react";
 
-interface CreateProductDialogProps {
-  className?: string;
-}
+export const CreateProductDialog = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-export const CreateProductDialog = ({
-  className,
-}: CreateProductDialogProps) => {
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <div className={cn("", className)}>
-      <Dialog>
-        <DialogTrigger className="text-sm rounded-md border border-border h-8 px-1.5 font-medium shadow-sm hover:bg-secondary-hover">
-          Создать товар
-        </DialogTrigger>
-        <DialogContent className="bg-white p-0 max-w-[1246px]">
-          <DialogHeader className="px-6 pt-6 ">
-            <DialogTitle>Создание товара</DialogTitle>
-            <DialogDescription className="text-base">
-              Введите нужные параметры товара в форму создания
-            </DialogDescription>
-          </DialogHeader>
-          <CreateProductForm />
-          <DialogFooter className="bg-background p-6 rounded-b-lg border-t border-border ">
-            <Button type="submit" className="mr-2">
-              Создать товар
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger className="text-sm rounded-md border border-border h-8 px-1.5 font-medium shadow-sm hover:bg-secondary-hover ">
+        Создать товар
+      </DialogTrigger>
+      <DialogContent className="bg-white p-0 min-w-[1300px]">
+        <DialogHeader className="px-6 pt-6 ">
+          <DialogTitle>Создание товара</DialogTitle>
+          <DialogDescription className="text-base">
+            Введите нужные параметры товара в форму создания
+          </DialogDescription>
+        </DialogHeader>
+        {/* <CreateProductForm onClose={handleClose} /> */}
+        <DialogFooter className="bg-background p-6 rounded-b-lg border-t border-border max-w-[1298px]">
+          <DialogClose asChild>
+            <Button type="button" variant="secondary">
+              Отмена
             </Button>
-            <DialogClose asChild>
-              <Button type="button" variant="secondary">
-                Отмена
-              </Button>
-            </DialogClose>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    </div>
+          </DialogClose>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 };

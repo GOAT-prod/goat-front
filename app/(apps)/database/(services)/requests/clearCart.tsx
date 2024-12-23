@@ -1,21 +1,19 @@
 import { dbapi } from "@/utils/api/dbinstance";
-import { OrderDB } from "../../types/types";
-import { useMutation, UseMutationOptions } from "@tanstack/react-query";
 import { queryClient } from "@/utils/api/query-client";
+import { useMutation, UseMutationOptions } from "@tanstack/react-query";
 
-const createOrder = async (userId: number) => {
-  await dbapi.post<OrderDB>(`order/${userId}`);
+const deleteCart = async (userId: number) => {
+  await dbapi.delete(`cart/clear/${userId}`);
 };
 
-export const useCreateOrder = (
+export const useDeleteCart = (
   userId: number,
   options?: UseMutationOptions<void, Error, number>
 ) => {
   return useMutation<void, Error, number>({
-    mutationFn: createOrder,
+    mutationFn: deleteCart,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["cart", userId] });
-      queryClient.invalidateQueries({ queryKey: ["orders", userId] });
     },
     ...options,
   });

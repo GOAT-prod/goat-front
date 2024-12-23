@@ -5,6 +5,7 @@ import { UserDB, UserStatusDB } from "../../../(services)/types/types";
 import { useUpdateUserStatus } from "../../../(services)/requests/updateUsers";
 import { queryClient } from "@/utils/api/query-client";
 import { Check, Trash } from "lucide-react";
+import { AlertUser } from "./DBAlertUser";
 
 interface UserCardProps {
   item: UserDB;
@@ -48,14 +49,7 @@ export const UserCard = ({ item }: UserCardProps) => {
               <Check />
             </Button>
           )}
-          <Button
-            variant="ghost"
-            className="bg-[#FDE3DE] border-[#F24822] border-2"
-            size="icon"
-            onClick={() => handleUpdateStatus(item.id, UserStatusDB.Deleted)}
-          >
-            <Trash />
-          </Button>
+          <AlertUser user={item} />
         </div>
       </div>
     </CardWrapper>

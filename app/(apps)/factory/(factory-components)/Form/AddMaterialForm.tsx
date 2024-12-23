@@ -11,17 +11,23 @@ import { productSchema } from "@/utils/constants/productSchema";
 import { Select } from "@radix-ui/react-select";
 import { useFieldArray, UseFormReturn } from "react-hook-form";
 import { z } from "zod";
+import { ProductMaterialDB } from "../../../database/(services)/types/types";
 
 interface AddMatetialsFormProps {
   form: UseFormReturn<z.infer<typeof productSchema>, any, undefined>;
 }
 
-const productMaterials: ProductMaterial[] = [
-  { Id: 1, Material: "Кожа" },
-  { Id: 2, Material: "Ткань" },
-  { Id: 3, Material: "Резина" },
-  { Id: 4, Material: "Пластик" },
-  { Id: 5, Material: "Замша" },
+const productMaterials: ProductMaterialDB[] = [
+  { id: 1, name: "Сетчатый текстиль (Mesh)" },
+  { id: 2, name: "Нейлон" },
+  { id: 3, name: "Кожа" },
+  { id: 4, name: "Синтетическая ткань (PU или PVC)" },
+  { id: 5, name: "Гума (резина)" },
+  { id: 6, name: "ЭВА (EVA)" },
+  { id: 7, name: "Пенополиуретан (PU)" },
+  { id: 8, name: "Термопластичный полиуретан (TPU)" },
+  { id: 9, name: "Карбоновое волокно" },
+  { id: 10, name: "Ткань с водоотталкивающей пропиткой" },
 ];
 
 export const AddMatetialsForm = ({ form }: AddMatetialsFormProps) => {
@@ -39,8 +45,8 @@ export const AddMatetialsForm = ({ form }: AddMatetialsFormProps) => {
           size="small"
           onClick={() => {
             append({
-              Id: productMaterials[0].Id,
-              Material: productMaterials[0].Material,
+              id: productMaterials[0].id,
+              name: productMaterials[0].name,
             });
           }}
         >
@@ -55,40 +61,40 @@ export const AddMatetialsForm = ({ form }: AddMatetialsFormProps) => {
           <div key={field.id} className="flex items-center gap-2 ">
             <FormField
               control={form.control}
-              name={`materials.${index}.Id`}
+              name={`materials.${index}.id`}
               render={({ field }) => (
                 <FormItem>
                   <Select
                     // При выборе материала обновляем Id и Material
                     onValueChange={(value) => {
                       const selectedMaterial = productMaterials.find(
-                        (material) => String(material.Id) === value
+                        (material) => String(material.id) === value
                       );
                       if (selectedMaterial) {
                         form.setValue(
-                          `materials.${index}.Id`,
-                          selectedMaterial.Id
+                          `materials.${index}.id`,
+                          selectedMaterial.id
                         );
                         form.setValue(
-                          `materials.${index}.Material`,
-                          selectedMaterial.Material
+                          `materials.${index}.name`,
+                          selectedMaterial.name
                         );
                       }
                     }}
                     value={String(field.value)} // Устанавливаем значение Id
                   >
                     <FormControl>
-                      <SelectTrigger className="min-w-[180px]">
+                      <SelectTrigger className="w-[250px] text-left text-ellipsis">
                         <SelectValue placeholder="Выберите материал" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
                       {productMaterials.map((material) => (
                         <SelectItem
-                          key={material.Id}
-                          value={String(material.Id)}
+                          key={material.id}
+                          value={String(material.id)}
                         >
-                          {material.Material}
+                          {material.name}
                         </SelectItem>
                       ))}
                     </SelectContent>

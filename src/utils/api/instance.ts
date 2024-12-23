@@ -5,6 +5,6 @@ export const headers: Record<string, string> = {
 };
 
 export const api = new Fetches({
-  // baseURL: "http://188.225.45.200:8080",
-  baseURL: "http://localhost:8080",
+  baseURL: "http://188.225.45.200:8080",
+  // baseURL: "http://localhost:8080",
 });

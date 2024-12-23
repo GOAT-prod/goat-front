@@ -13,20 +13,19 @@ import { productSchema } from "@/utils/constants/productSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { TextField } from "./TextField";
-import { AddImagesForm } from "./AddImagesForm";
-import { AddProductItem } from "./AddProductItem";
-import { AddMatetialsForm } from "./AddMatetialsForm";
 
-export const CreateProductForm = () => {
+import { queryClient } from "@/utils/api/query-client";
+import { Title } from "@/ui/title";
+
+export const CreateProductForm = ({ onClose }: { onClose: () => void }) => {
+  //   const { selectedFactoryUser } = useUserStore((state) => state);
+
   const createForm = useForm<z.infer<typeof productSchema>>({
     resolver: zodResolver(productSchema),
     defaultValues: {
-      brandName: "",
-      factory: {
-        factoryName: "",
-        id: 0,
-      },
+      brand: "",
+      factoryId: selectedFactoryUser?.clientId,
+      factoryName: selectedFactoryUser?.name,
       id: 0,
       name: "",
       status: "created",
@@ -36,8 +35,21 @@ export const CreateProductForm = () => {
     },
   });
 
+  const { mutate, isPending, isError } = useCreateProduct({
+    onSuccess: (data) => {
+      console.log("Продукт добавлен:", data);
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+    },
+    onError: (error) => {
+      console.error("Ошибка при добавлении продукта:", error);
+    },
+  });
+
+  console.log(createForm.formState.errors);
+
   const onSubmit = (values: z.infer<typeof productSchema>) => {
-    console.log(values);
+    mutate(values);
+    onClose();
   };
 
   return (
@@ -47,14 +59,7 @@ export const CreateProductForm = () => {
           className="space-y-8 w-full p-6"
           onSubmit={createForm.handleSubmit(onSubmit)}
         >
-          {/* Бренд, название, цена */}
           <div className="flex gap-4">
-            <TextField
-              title="Бренд кроссовок"
-              placeholder={"Введите бренд"}
-              name={"brandName"}
-              control={createForm.control}
-            />
             <TextField
               title="Название кроссовок"
               placeholder={"Введите название"}
@@ -70,9 +75,13 @@ export const CreateProductForm = () => {
                       type="number"
                       placeholder="Введите цену"
                       {...field}
-                      onChange={(e) =>
-                        field.onChange(Number(e.target.value) ?? undefined)
-                      }
+                      value={field.value ?? ""}
+                      onChange={(e) => {
+                        const value = e.target.value
+                          ? Number(e.target.value)
+                          : undefined;
+                        field.onChange(value);
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
@@ -81,6 +90,12 @@ export const CreateProductForm = () => {
               control={createForm.control}
               name="price"
             />
+            {isError && (
+              <Title
+                text="Ошибка добавления продукта"
+                className="text-red-400"
+              />
+            )}
           </div>
           <div className="flex gap-6">
             <AddImagesForm form={createForm} />
