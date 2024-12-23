@@ -1,0 +1,1052 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "Name": "Nike Air Max",
+            "BrandName": "Nike",
+            "FactoryName": "Nike Factory 1",
+            "Description": "High-quality running sneakers with Air Max cushioning.",
+            "Price": 120.99,
+            "Items": [
+                {
+                    "id": 124,
+                    "StockCount": 50,
+                    "Size": 42,
+                    "Weight": 0.9,
+                    "Color": "Black"
+                },
+                {
+                    "id": 125,
+                    "StockCount": 40,
+                    "Size": 43,
+                    "Weight": 0.92,
+                    "Color": "White"
+                },
+                {
+                    "id": 126,
+                    "StockCount": 30,
+                    "Size": 41,
+                    "Weight": 0.88,
+                    "Color": "Red"
+                },
+                {
+                    "id": 127,
+                    "StockCount": 20,
+                    "Size": 40,
+                    "Weight": 0.87,
+                    "Color": "Blue"
+                },
+                {
+                    "id": 128,
+                    "StockCount": 60,
+                    "Size": 44,
+                    "Weight": 0.94,
+                    "Color": "Green"
+                },
+                {
+                    "id": 129,
+                    "StockCount": 35,
+                    "Size": 42,
+                    "Weight": 0.9,
+                    "Color": "Yellow"
+                },
+                {
+                    "id": 130,
+                    "StockCount": 25,
+                    "Size": 43,
+                    "Weight": 0.92,
+                    "Color": "Black"
+                },
+                {
+                    "id": 131,
+                    "StockCount": 45,
+                    "Size": 41,
+                    "Weight": 0.88,
+                    "Color": "White"
+                },
+                {
+                    "id": 132,
+                    "StockCount": 50,
+                    "Size": 40,
+                    "Weight": 0.87,
+                    "Color": "Red"
+                },
+                {
+                    "id": 133,
+                    "StockCount": 55,
+                    "Size": 44,
+                    "Weight": 0.94,
+                    "Color": "Blue"
+                },
+                {
+                    "id": 134,
+                    "StockCount": 56,
+                    "Size": 45,
+                    "Weight": 0.94,
+                    "Color": "Blue"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 124,
+                    "Material": "Leather"
+                },
+                {
+                    "id": 2,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/gSmC47V.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 2,
+            "Name": "Adidas Ultraboost",
+            "BrandName": "Adidas",
+            "FactoryName": "Adidas Factory 3",
+            "Description": "Premium running shoes with superior energy return.",
+            "Price": 150.5,
+            "Items": [
+                {
+                    "id": 125,
+                    "StockCount": 40,
+                    "Size": 44,
+                    "Weight": 0.85,
+                    "Color": "White"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 125,
+                    "Material": "Synthetic"
+                },
+                {
+                    "id": 3,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/2RtisSR.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 3,
+            "Name": "Puma RS-X",
+            "BrandName": "Puma",
+            "FactoryName": "Puma Factory A",
+            "Description": "Stylish sneakers with retro-inspired design.",
+            "Price": 99.99,
+            "Items": [
+                {
+                    "id": 126,
+                    "StockCount": 60,
+                    "Size": 43,
+                    "Weight": 0.95,
+                    "Color": "Red"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 126,
+                    "Material": "Mesh"
+                },
+                {
+                    "id": 4,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/7T0ok4Q.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 4,
+            "Name": "Reebok Nano X1",
+            "BrandName": "Reebok",
+            "FactoryName": "Reebok Central",
+            "Description": "Versatile training shoes for cross-training and lifting.",
+            "Price": 110.0,
+            "Items": [
+                {
+                    "id": 127,
+                    "StockCount": 45,
+                    "Size": 40,
+                    "Weight": 0.8,
+                    "Color": "Blue"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 127,
+                    "Material": "Textile"
+                },
+                {
+                    "id": 5,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/AibLnbD.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 5,
+            "Name": "Asics Gel-Kayano",
+            "BrandName": "Asics",
+            "FactoryName": "Asics Plant 2",
+            "Description": "Stability running shoes with GEL cushioning system.",
+            "Price": 135.75,
+            "Items": [
+                {
+                    "id": 128,
+                    "StockCount": 55,
+                    "Size": 41,
+                    "Weight": 0.88,
+                    "Color": "Gray"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 128,
+                    "Material": "Foam"
+                },
+                {
+                    "id": 6,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/TtizaYP.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 6,
+            "Name": "New Balance 990v5",
+            "BrandName": "New Balance",
+            "FactoryName": "NB Factory 5",
+            "Description": "Classic sneakers with premium comfort and durability.",
+            "Price": 180.0,
+            "Items": [
+                {
+                    "id": 129,
+                    "StockCount": 30,
+                    "Size": 45,
+                    "Weight": 1.0,
+                    "Color": "Green"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 129,
+                    "Material": "Suede"
+                },
+                {
+                    "id": 7,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/vcbwD33.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 7,
+            "Name": "Adidas Ultraboost",
+            "BrandName": "Adidas",
+            "FactoryName": "Adidas Factory 1",
+            "Description": "Comfortable running shoes with responsive Boost midsole.",
+            "Price": 150.99,
+            "Items": [
+                {
+                    "id": 201,
+                    "StockCount": 40,
+                    "Size": 43,
+                    "Weight": 0.8,
+                    "Color": "White"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 201,
+                    "Material": "Primeknit"
+                },
+                {
+                    "id": 202,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/aSuwtH5.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 8,
+            "Name": "Puma RS-X",
+            "BrandName": "Puma",
+            "FactoryName": "Puma Factory 2",
+            "Description": "Retro-inspired sneakers with bold design.",
+            "Price": 120.49,
+            "Items": [
+                {
+                    "id": 302,
+                    "StockCount": 60,
+                    "Size": 42,
+                    "Weight": 0.85,
+                    "Color": "Gray"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 301,
+                    "Material": "Textile"
+                },
+                {
+                    "id": 302,
+                    "Material": "Synthetic"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/oa9Q3ak.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 9,
+            "Name": "Reebok Nano X2",
+            "BrandName": "Reebok",
+            "FactoryName": "Reebok Factory 3",
+            "Description": "High-performance cross-training shoes.",
+            "Price": 140.75,
+            "Items": [
+                {
+                    "id": 403,
+                    "StockCount": 55,
+                    "Size": 44,
+                    "Weight": 0.9,
+                    "Color": "Black"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 401,
+                    "Material": "Mesh"
+                },
+                {
+                    "id": 402,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/o56b9K1.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 10,
+            "Name": "New Balance 990v5",
+            "BrandName": "New Balance",
+            "FactoryName": "New Balance Factory 1",
+            "Description": "Premium running shoes made in the USA.",
+            "Price": 180.99,
+            "Items": [
+                {
+                    "id": 504,
+                    "StockCount": 35,
+                    "Size": 41,
+                    "Weight": 1.0,
+                    "Color": "Navy"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 501,
+                    "Material": "Suede"
+                },
+                {
+                    "id": 502,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/azy7jdR.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 11,
+            "Name": "Asics Gel-Kayano",
+            "BrandName": "Asics",
+            "FactoryName": "Asics Factory 2",
+            "Description": "Stability-focused running shoes with Gel technology.",
+            "Price": 160.89,
+            "Items": [
+                {
+                    "id": 605,
+                    "StockCount": 45,
+                    "Size": 40,
+                    "Weight": 0.95,
+                    "Color": "Red"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 601,
+                    "Material": "Synthetic"
+                },
+                {
+                    "id": 602,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/lvs5Plq.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 12,
+            "Name": "Under Armour HOVR",
+            "BrandName": "Under Armour",
+            "FactoryName": "Under Armour Factory 1",
+            "Description": "Lightweight running shoes with HOVR cushioning.",
+            "Price": 135.99,
+            "Items": [
+                {
+                    "id": 706,
+                    "StockCount": 50,
+                    "Size": 42,
+                    "Weight": 0.88,
+                    "Color": "Green"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 701,
+                    "Material": "Mesh"
+                },
+                {
+                    "id": 702,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/5NEhxxk.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 13,
+            "Name": "Saucony Triumph",
+            "BrandName": "Saucony",
+            "FactoryName": "Saucony Factory 1",
+            "Description": "Max-cushioning running shoes for long distances.",
+            "Price": 170.99,
+            "Items": [
+                {
+                    "id": 807,
+                    "StockCount": 30,
+                    "Size": 43,
+                    "Weight": 1.1,
+                    "Color": "Blue"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 801,
+                    "Material": "Synthetic"
+                },
+                {
+                    "id": 802,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/4AopSLq.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 14,
+            "Name": "Brooks Ghost",
+            "BrandName": "Brooks",
+            "FactoryName": "Brooks Factory 2",
+            "Description": "Soft and smooth running shoes for everyday training.",
+            "Price": 140.99,
+            "Items": [
+                {
+                    "id": 908,
+                    "StockCount": 48,
+                    "Size": 44,
+                    "Weight": 0.87,
+                    "Color": "Black/White"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 901,
+                    "Material": "Mesh"
+                },
+                {
+                    "id": 902,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/uquPx9w.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 15,
+            "Name": "Hoka Clifton",
+            "BrandName": "Hoka",
+            "FactoryName": "Hoka Factory 1",
+            "Description": "Plush and lightweight running shoes.",
+            "Price": 130.99,
+            "Items": [
+                {
+                    "id": 1009,
+                    "StockCount": 60,
+                    "Size": 41,
+                    "Weight": 0.8,
+                    "Color": "Gray/Yellow"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1001,
+                    "Material": "Textile"
+                },
+                {
+                    "id": 1002,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/ILCDYM1.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 16,
+            "Name": "Mizuno Wave Rider",
+            "BrandName": "Mizuno",
+            "FactoryName": "Mizuno Factory 1",
+            "Description": "Smooth-riding shoes with Wave plate technology.",
+            "Price": 145.99,
+            "Items": [
+                {
+                    "id": 1110,
+                    "StockCount": 52,
+                    "Size": 42,
+                    "Weight": 0.92,
+                    "Color": "White/Blue"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1101,
+                    "Material": "Synthetic"
+                },
+                {
+                    "id": 1102,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/7AnuW0C.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 17,
+            "Name": "On Cloud X",
+            "BrandName": "On",
+            "FactoryName": "On Factory 1",
+            "Description": "Versatile shoes for running and training.",
+            "Price": 140.99,
+            "Items": [
+                {
+                    "id": 1201,
+                    "StockCount": 45,
+                    "Size": 41,
+                    "Weight": 0.78,
+                    "Color": "White/Black"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1201,
+                    "Material": "Mesh"
+                },
+                {
+                    "id": 1202,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/AfQO3U7.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 18,
+            "Name": "Nike Zoom Fly",
+            "BrandName": "Nike",
+            "FactoryName": "Nike Factory 2",
+            "Description": "Fast-paced shoes for race day.",
+            "Price": 180.49,
+            "Items": [
+                {
+                    "id": 1302,
+                    "StockCount": 38,
+                    "Size": 43,
+                    "Weight": 0.72,
+                    "Color": "Red/Black"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1301,
+                    "Material": "Flyknit"
+                },
+                {
+                    "id": 1302,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/EIsruG1.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 19,
+            "Name": "Adidas Terrex",
+            "BrandName": "Adidas",
+            "FactoryName": "Adidas Factory 2",
+            "Description": "Durable trail running shoes.",
+            "Price": 160.00,
+            "Items": [
+                {
+                    "id": 1403,
+                    "StockCount": 50,
+                    "Size": 42,
+                    "Weight": 0.95,
+                    "Color": "Black/Orange"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1401,
+                    "Material": "Textile"
+                },
+                {
+                    "id": 1402,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/Rltsa8x.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 20,
+            "Name": "Puma Deviate Nitro",
+            "BrandName": "Puma",
+            "FactoryName": "Puma Factory 3",
+            "Description": "Carbon-plated shoes for high performance.",
+            "Price": 200.99,
+            "Items": [
+                {
+                    "id": 1504,
+                    "StockCount": 30,
+                    "Size": 44,
+                    "Weight": 0.83,
+                    "Color": "Blue/White"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1501,
+                    "Material": "Synthetic"
+                },
+                {
+                    "id": 1502,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/XrvaA9u.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 21,
+            "Name": "New Balance Fresh Foam",
+            "BrandName": "New Balance",
+            "FactoryName": "New Balance Factory 2",
+            "Description": "Soft and smooth shoes for all-day comfort.",
+            "Price": 130.50,
+            "Items": [
+                {
+                    "id": 1605,
+                    "StockCount": 60,
+                    "Size": 41,
+                    "Weight": 0.85,
+                    "Color": "Gray/Yellow"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1601,
+                    "Material": "Suede"
+                },
+                {
+                    "id": 1602,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/bwQ9cCZ.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 22,
+            "Name": "Asics Novablast",
+            "BrandName": "Asics",
+            "FactoryName": "Asics Factory 3",
+            "Description": "Lightweight running shoes with responsive foam.",
+            "Price": 150.75,
+            "Items": [
+                {
+                    "id": 1706,
+                    "StockCount": 42,
+                    "Size": 40,
+                    "Weight": 0.79,
+                    "Color": "Blue/Green"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1701,
+                    "Material": "Mesh"
+                },
+                {
+                    "id": 1702,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/95K3VBc.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 23,
+            "Name": "Hoka Bondi",
+            "BrandName": "Hoka",
+            "FactoryName": "Hoka Factory 2",
+            "Description": "Maximalist running shoes with plush cushioning.",
+            "Price": 170.00,
+            "Items": [
+                {
+                    "id": 1807,
+                    "StockCount": 35,
+                    "Size": 44,
+                    "Weight": 1.0,
+                    "Color": "White/Blue"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1801,
+                    "Material": "Textile"
+                },
+                {
+                    "id": 1802,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/3JcHVOb.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 24,
+            "Name": "Brooks Hyperion",
+            "BrandName": "Brooks",
+            "FactoryName": "Brooks Factory 3",
+            "Description": "Racing shoes designed for speed.",
+            "Price": 190.49,
+            "Items": [
+                {
+                    "id": 1908,
+                    "StockCount": 28,
+                    "Size": 43,
+                    "Weight": 0.65,
+                    "Color": "Red/White"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 1901,
+                    "Material": "Mesh"
+                },
+                {
+                    "id": 1902,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/yYZQoAo.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 25,
+            "Name": "Under Armour Velociti",
+            "BrandName": "Under Armour",
+            "FactoryName": "Under Armour Factory 2",
+            "Description": "Speed-focused running shoes with breathable upper.",
+            "Price": 140.99,
+            "Items": [
+                {
+                    "id": 2009,
+                    "StockCount": 47,
+                    "Size": 42,
+                    "Weight": 0.82,
+                    "Color": "Black/Yellow"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 2001,
+                    "Material": "Synthetic"
+                },
+                {
+                    "id": 2002,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/xxCrARN.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        },
+        {
+            "id": 26,
+            "Name": "Mizuno Wave Sky",
+            "BrandName": "Mizuno",
+            "FactoryName": "Mizuno Factory 2",
+            "Description": "Comfortable long-distance running shoes.",
+            "Price": 165.49,
+            "Items": [
+                {
+                    "id": 2110,
+                    "StockCount": 40,
+                    "Size": 41,
+                    "Weight": 0.88,
+                    "Color": "Blue/White"
+                }
+            ],
+            "Materials": [
+                {
+                    "id": 2101,
+                    "Material": "Mesh"
+                },
+                {
+                    "id": 2102,
+                    "Material": "Rubber"
+                }
+            ],
+            "Images": [
+                "https://i.imgur.com/wISVdus.png"
+            ],
+            "Approver": "user",
+            "Status": "Approved"
+        }
+    ],
+    "filters": {
+        "BrandNames": [
+            "Nike",
+            "Adidas",
+            "Puma",
+            "Reebok",
+            "Asics",
+            "Under Armour",
+            "New Balance",
+            "Hoka",
+            "Mizuno",
+            "On",
+            "Brooks"
+        ],
+        "Sizes": [
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+        ],
+        "Colors": [
+            "Black",
+            "Black/White",
+            "White",
+            "Blue",
+            "Blue/White",
+            "Red",
+            "Red/Black",
+            "Red/White",
+            "Black/Yellow",
+            "Blue/Green",
+            "Gray/Yellow",
+            "White/Blue",
+            "Black/Orange",
+            "White/Black"
+        ],
+        "Materials": [
+            "Leather",
+            "Rubber",
+            "Mesh",
+            "Synthetic",
+            "Foam",
+            "Cotton",
+            "Polyester",
+            "EVA",
+            "Textile",
+            "Suede"
+        ],
+        "MinPrice": 110.00,
+        "MaxPrice": 200.99
+    },
+    "cart": {
+        "items": [
+            {
+                "id": 1,
+                "isSelected": true,
+                "name": "Nike Air Zoom Pegasus 37",
+                "price": "9 990 $",
+                "color": "Черный",
+                "size": "42",
+                "StockCount": 5
+            },
+            {
+                "id": 2,
+                "isSelected": false,
+                "name": "Adidas Ultraboost 22",
+                "price": "12 990 $",
+                "color": "Белый",
+                "size": "43",
+                "StockCount": 0
+            },
+            {
+                "id": 3,
+                "isSelected": true,
+                "name": "Puma RS-X Reinvent",
+                "price": "8 490 $",
+                "color": "Синий",
+                "size": "44",
+                "StockCount": 1
+            },
+            {
+                "id": 4,
+                "isSelected": false,
+                "name": "Reebok Nano X2",
+                "price": "10 490 $",
+                "color": "Красный",
+                "size": "41",
+                "StockCount": 3
+            },
+            {
+                "id": 5,
+                "isSelected": true,
+                "name": "Asics Gel-Kayano 28",
+                "price": "14 490 $",
+                "color": "Серый",
+                "size": "42",
+                "StockCount": 4
+            },
+            {
+                "id": 6,
+                "isSelected": false,
+                "name": "New Balance 990v5",
+                "price": "18 990 $",
+                "color": "Чёрный",
+                "size": "40",
+                "StockCount": 0
+            },
+            {
+                "id": 7,
+                "isSelected": true,
+                "name": "Saucony Endorphin Speed 3",
+                "price": "13 990 $",
+                "color": "Зеленый",
+                "size": "43"
+            },
+            {
+                "id": 8,
+                "isSelected": true,
+                "name": "Under Armour HOVR Sonic 5",
+                "price": "11 490 $",
+                "color": "Белый",
+                "size": "42",
+                "StockCount": 10
+            },
+            {
+                "id": 9,
+                "isSelected": true,
+                "name": "Mizuno Wave Rider 26",
+                "price": "12 490 $",
+                "color": "Фиолетовый",
+                "size": "44",
+                "StockCount": 7
+            },
+            {
+                "id": 10,
+                "isSelected": true,
+                "name": "Hoka One One Clifton 8",
+                "price": "15 990 $",
+                "color": "Жёлтый",
+                "size": "41",
+                "StockCount": 0
+            }
+        ],
+        "totalAmount": "1270"
+    }
+}
