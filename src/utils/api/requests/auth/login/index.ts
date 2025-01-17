@@ -10,6 +10,11 @@ interface LoginCredentials {
   password: string;
 }
 
+interface AuthResponse {
+  access_token: string;
+  refresh_token: string;
+}
+
 const login = async (credentials: LoginCredentials): Promise<AuthResponse> => {
   const response = await api.post<AuthResponse>(
     "auth/login",

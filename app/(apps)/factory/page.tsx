@@ -1,5 +1,5 @@
 import { CatalogContainer } from "../shop/(shop-components)/Catalog/CatalogContainer";
-import { CreateProductDialog } from "./(factory-components)/CreateProductDialog";
+import { CreateProduct } from "./CreateProduct";
 
 export default async function Factory() {
   return (
@@ -9,6 +9,7 @@ export default async function Factory() {
       </aside> */}
       <CatalogContainer headerTitle="Товары">
         {/* <CreateProductDialog /> */}
+        <CreateProduct />
         <div>Список продуктов</div>
         {/* <ProductsCatalog /> */}
       </CatalogContainer>

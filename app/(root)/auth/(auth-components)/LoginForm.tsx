@@ -21,10 +21,10 @@ import { Loader } from "@/ui/loader";
 import { useUserStore } from "@/store/userStore";
 
 export const loginSchema = z.object({
-  username: z.string().email({ message: "Некорректный email" }),
+  username: z.string(),
   password: z
     .string()
-    .min(6, { message: "Пароль должен быть не менее 8 символов" }),
+    .min(5, { message: "Пароль должен быть не менее 5 символов" }),
 });
 
 export const LoginForm = () => {
@@ -92,11 +92,7 @@ export const LoginForm = () => {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input
-                      type="email"
-                      placeholder="Введите email"
-                      {...field}
-                    />
+                    <Input type="text" placeholder="Введите email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

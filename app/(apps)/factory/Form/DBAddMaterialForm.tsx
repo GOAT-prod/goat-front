@@ -11,13 +11,13 @@ import { productSchema } from "@/utils/constants/productSchema";
 import { Select } from "@radix-ui/react-select";
 import { useFieldArray, UseFormReturn } from "react-hook-form";
 import { z } from "zod";
-import { ProductMaterialDB } from "../../../database/(services)/types/types";
+// import { ProductMaterialDB } from "../../../(services)/types/types";
 
 interface AddMatetialsFormProps {
   form: UseFormReturn<z.infer<typeof productSchema>, any, undefined>;
 }
 
-const productMaterials: ProductMaterialDB[] = [
+const productMaterials = [
   { id: 1, name: "Сетчатый текстиль (Mesh)" },
   { id: 2, name: "Нейлон" },
   { id: 3, name: "Кожа" },

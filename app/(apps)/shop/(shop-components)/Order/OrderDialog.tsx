@@ -65,7 +65,7 @@ export const OrderDialog = ({ className, cart }: OrderDialogProps) => {
                     type="text"
                     id="client-address"
                     placeholder="Адрес"
-                    value={"Penza Dom 4/3"}
+                    value={"ул. Синяя, 84, г. Пенза, Россия"}
                     readOnly
                   />
                 </div>

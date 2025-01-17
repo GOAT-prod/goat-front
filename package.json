@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo ",
-    "dev:server": "json-server db.json --port 8080",
+    "dev:server": "json-server db.json --port 8000",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write \"**/*.{js,ts,tsx,html,css}\"",

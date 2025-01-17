@@ -13,6 +13,8 @@ interface AddImagesFormProps {
 }
 
 export const AddImagesForm = ({ form }: AddImagesFormProps) => {
+  // const { selectedFactoryUser } = useUserStore((state) => state);
+
   const { fields, append, remove } = useFieldArray({
     control: form.control,
     name: "images",
