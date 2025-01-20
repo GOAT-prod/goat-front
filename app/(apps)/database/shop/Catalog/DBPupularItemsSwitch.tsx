@@ -11,7 +11,7 @@ export function PopularItemsSwitch({
   isLoading?: boolean;
 }) {
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-2 invisible">
       <Switch
         checked={state}
         onCheckedChange={switcher}

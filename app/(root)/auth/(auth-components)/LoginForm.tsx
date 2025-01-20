@@ -51,13 +51,13 @@ export const LoginForm = () => {
 
           switch (role) {
             case "shop":
-              router.push("/shop");
+              router.push("/database/shop");
               break;
             case "admin":
-              router.push("/admin");
+              router.push("/database/admin");
               break;
             case "factory":
-              router.push("/factory");
+              router.push("/database/factory");
               break;
             default:
               router.push("/");

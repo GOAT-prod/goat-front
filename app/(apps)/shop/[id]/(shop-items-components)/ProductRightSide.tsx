@@ -1,14 +1,17 @@
+import { ProductDB } from "../../../../../@types/types";
 import { ProductItems } from "./ProductItems";
 import { Skeleton } from "@/ui/skeleton";
 
 interface ProductRightSideProps {
-  product?: Product;
+  product?: ProductDB;
   isLoading?: boolean;
+  onClose: () => void;
 }
 
 export const ProductRightSide = ({
   product,
   isLoading,
+  onClose,
 }: ProductRightSideProps) => {
   if (isLoading) {
     return (
@@ -22,7 +25,11 @@ export const ProductRightSide = ({
 
   return (
     <div className="flex-1 flex flex-col gap-6 ">
-      <ProductItems productItems={product?.Items} />
+      <ProductItems
+        productItems={product?.items}
+        product={product}
+        onClose={onClose}
+      />
     </div>
   );
 };

@@ -10,9 +10,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/ui/card";
+import { CartDB, ProductDB } from "../../../database/(services)/types/types";
+import { CatalogCardDrawer } from "../../../database/shop/Catalog/DBCatalogCardDrawet";
 
 interface ProductCardProps {
-  product: Product;
+  product: ProductDB;
   onClick?: () => void;
 }
 
@@ -22,16 +24,18 @@ export const ProductCard = ({ product, onClick }: ProductCardProps) => {
       <ProductCardHeader className="h-full w-full">
         <img
           alt="Карточка товара"
-          src={product.Images[0]}
+          src={product.images[0].url}
           className="w-full min-h-full"
         />
       </ProductCardHeader>
       <ProductCardContent>
-        <ProductCardTitle>{product.Name}</ProductCardTitle>
+        <ProductCardTitle>{product.name}</ProductCardTitle>
       </ProductCardContent>
       <ProductCardFooter className="flex items-center justify-between">
-        <Title size="md" text={`${product.Price} $`} />
-        <Button size="small">Заказать</Button>
+        <Title size="md" text={`${product.price} $`} />
+        <Button size="small">
+          <CatalogCardDrawer item={product} />
+        </Button>
       </ProductCardFooter>
     </ProductCardLayout>
   );

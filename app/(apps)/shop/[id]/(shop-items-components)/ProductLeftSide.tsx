@@ -1,9 +1,10 @@
 import { SkeletonCard } from "@/components/SkeletonCard";
 import { Skeleton } from "@/ui/skeleton";
 import { Title } from "@/ui/title";
+import { ProductDB } from "../../../database/(services)/types/types";
 
 interface ProductLeftSideProps {
-  product?: Product;
+  product: ProductDB;
   isLoading?: boolean;
 }
 
@@ -27,7 +28,7 @@ export const ProductLeftSide = ({
     <div className="flex flex-col gap-6 w-[40%]">
       <div className="bg-background-secondary p-6 rounded-lg border-[1.5px] border-border">
         <img
-          src={product?.Images[0]}
+          src={product?.images[0].url}
           alt="Карточка товара"
           className="rounded-md "
         />
@@ -38,42 +39,35 @@ export const ProductLeftSide = ({
           <Title
             tag="h1"
             size="2xl"
-            text={product?.BrandName || "Бренд"}
+            text={product?.brand || "Бренд"}
             className="mb-4 font-semibold leading-7"
           />
           <Title
             size="lg"
-            text={product?.Name || "Название кроссовок"}
+            text={product?.name || "Название кроссовок"}
             className="font-medium"
           />
         </div>
         <Title
           size="2xl"
-          text={`${product?.Price || 0} $`}
+          text={`${product?.price || 0} $`}
           className="font-semibold leading-[2.3]"
         />
       </div>
       <div className="p-6 bg-background-secondary rounded-lg border-[1.5px] border-border">
         <div className="text-sm flex flex-col gap-3">
           <div className="flex gap-[15px] items-center h-[40px]">
-            <p className="min-w-[100px] font-medium ">Описание:</p>
-            <p className="text-[#8F8F8F]">
-              {product?.Description || "Описание кроссовок"}
-            </p>
-          </div>
-          <div className="flex gap-[15px] items-center h-[40px]">
             <p className="w-[100px] font-medium">Изготовитель:</p>
             <p className="text-[#8F8F8F]">
-              {product?.FactoryName || "Завод кроссовок"}
+              {product?.factoryName || "Завод кроссовок"}
             </p>
           </div>
           <div className="flex gap-[15px] items-center h-[40px]">
             <p className="w-[100px] font-medium">Материалы:</p>
             <p className="text-[#8F8F8F]">
-              {product?.Materials.reduce(
-                (acc, material) => (acc += material.Material + ", "),
-                ""
-              ).slice(0, -2)}
+              {product?.materials
+                .reduce((acc, material) => (acc += material.name + ", "), "")
+                .slice(0, -2)}
             </p>
           </div>
         </div>

@@ -1,13 +1,22 @@
 "use client";
 import { Header } from "@/components/Header";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { DatabaseSelectApp } from "./DatabaseSelectApp";
 import { UserSelect } from "./UserSelect";
 import { useEffect, useState } from "react";
+import { Button } from "@/ui/button";
 
 export const DatabaseHeader = () => {
   const [appStatus, setAppStatus] = useState({ title: "", status: "" });
   const pathname = usePathname();
+
+  const router = useRouter();
+
+  const logoutHendler = () => {
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("user");
+    router.push("/auth");
+  };
 
   useEffect(() => {
     if (pathname.startsWith("/database/admin")) {
@@ -29,7 +38,12 @@ export const DatabaseHeader = () => {
       </div>
       <div className="flex flex-1 items-center justify-between py-5 pr-7 pl-6">
         <p className="text-lg">{appStatus.title}</p>
-        <UserSelect status={appStatus.status} />
+        <div className="flex items-center gap-2">
+          <UserSelect status={appStatus.status} />
+          <Button size="small" onClick={logoutHendler}>
+            Выйти
+          </Button>
+        </div>
       </div>
     </Header>
   );
